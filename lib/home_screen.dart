@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         InkWell(
                           borderRadius: BorderRadius.circular(16),
-                          splashColor: Colors.greenAccent[220],
+                          splashColor: Colors.greenAccent[250],
                           child: Card(
                             // color: Colors.transparent,
                             shape: RoundedRectangleBorder(
