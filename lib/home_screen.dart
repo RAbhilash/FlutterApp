@@ -46,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         CircleAvatar(
                           radius: 32,
-                          backgroundImage: NetworkImage(
-                              'https://i.pinimg.com/originals/78/07/03/78070395106fcd1c3e66e3b3810568bb.jpg'),
+                          // backgroundImage: NetworkImage(
+                          //     'https://i.pinimg.com/originals/78/07/03/78070395106fcd1c3e66e3b3810568bb.jpg'),
                         ),
                         SizedBox(
                           width: 16,
@@ -126,12 +126,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904527.svg',
-                                height: 128,
+                              Image.asset(
+                                'images/calc.png',
+                                height: 100,
                               ),
+                              SizedBox(height: 10),
                               Text(
-                                'Attendance Recap',
+                                'GPA Calculator',
                                 style: cardTextStyle,
                               )
                             ],
