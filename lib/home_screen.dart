@@ -1,3 +1,4 @@
+import 'package:app/GPA.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -84,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisCount: 2,
                       children: <Widget>[
                         //this is personal data
-
+                        //card 1: personal
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
@@ -123,25 +124,30 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-                        Card(
-                          //card 3:gpa
-
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          elevation: 10,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/images/calc.png',
-                                height: 100,
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'GPA Calculator',
-                                style: cardTextStyle,
-                              )
-                            ],
+                        //card 3:gpa
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Gpa()));
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            elevation: 10,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/calc.png',
+                                  height: 100,
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'GPA Calculator',
+                                  style: cardTextStyle,
+                                )
+                              ],
+                            ),
                           ),
                         ),
 
@@ -173,7 +179,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         // ),
                         Card(
                           //card 4:course notes
-
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
                           elevation: 4,
