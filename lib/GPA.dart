@@ -8,7 +8,7 @@ class Gpa extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GPA calculator...test"),
+        title: Text("GPA calculator...test1"),
       ),
     );
   }
