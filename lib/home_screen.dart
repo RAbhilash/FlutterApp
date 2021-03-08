@@ -92,8 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904425.svg',
+                              Image.asset(
+                                'assets/images/personal.png',
                                 height: 100,
                               ),
                               Text(
@@ -112,10 +112,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'assets/images/calc.png', //add img here
+                                'assets/images/books.png', //add img here
                                 height: 100,
                               ),
-                              SizedBox(height: 10),
+                              //SizedBox(height: 10),
                               Text(
                                 'Books',
                                 style: cardTextStyle,
@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'assets/images/calc.png',
+                                'assets/images/notes.png',
                                 height: 100,
                               ),
                               SizedBox(height: 10),
