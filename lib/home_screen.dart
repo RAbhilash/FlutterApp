@@ -108,12 +108,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904565.svg',
-                                height: 128,
+                              Image.asset(
+                                'images/calc.png',
+                                height: 100,
                               ),
+                              SizedBox(height: 10),
                               Text(
-                                'Course Schedule',
+                                'Books',
                                 style: cardTextStyle,
                               )
                             ],
@@ -138,6 +139,33 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
+
+                        // InkWell(
+                        //   borderRadius: BorderRadius.circular(16),
+                        //   splashColor: Colors.greenAccent[210],
+                        //   child: Card(
+                        //     // color: Colors.transparent,
+                        //     shape: RoundedRectangleBorder(
+                        //         borderRadius: BorderRadius.circular(20)),
+                        //     elevation: 20,
+                        //     child: Column(
+                        //       mainAxisAlignment: MainAxisAlignment.center,
+                        //       children: <Widget>[
+                        //         SvgPicture.network(
+                        //           'https://image.flaticon.com/icons/svg/1904/1904235.svg',
+                        //           height: 128,
+                        //         ),
+                        //         Text(
+                        //           'Course Booking',
+                        //           style: cardTextStyle,
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        //   onTap: () {
+                        //     print("Tapped");
+                        //   },
+                        // ),
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
@@ -145,56 +173,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904437.svg',
-                                height: 128,
+                              Image.asset(
+                                'images/calc.png',
+                                height: 100,
                               ),
+                              SizedBox(height: 10),
                               Text(
-                                'Study Result',
-                                style: cardTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                        InkWell(
-                          borderRadius: BorderRadius.circular(16),
-                          splashColor: Colors.greenAccent[210],
-                          child: Card(
-                            // color: Colors.transparent,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            elevation: 20,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                SvgPicture.network(
-                                  'https://image.flaticon.com/icons/svg/1904/1904235.svg',
-                                  height: 128,
-                                ),
-                                Text(
-                                  'Course Booking',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: () {
-                            print("Tapped");
-                          },
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          elevation: 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              SvgPicture.network(
-                                'https://image.flaticon.com/icons/svg/1904/1904221.svg',
-                                height: 128,
-                              ),
-                              Text(
-                                'Course Plan',
+                                'Course Notes',
                                 style: cardTextStyle,
                               )
                             ],
