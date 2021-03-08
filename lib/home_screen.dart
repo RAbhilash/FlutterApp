@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               SvgPicture.network(
                                 'https://image.flaticon.com/icons/svg/1904/1904425.svg',
-                                height: 128,
+                                height: 100,
                               ),
                               Text(
                                 'Personal Data',
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'images/calc.png', //add img here
+                                'assets/images/calc.png', //add img here
                                 height: 100,
                               ),
                               SizedBox(height: 10),
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'images/calc.png',
+                                'assets/images/calc.png',
                                 height: 100,
                               ),
                               SizedBox(height: 10),
@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'images/calc.png',
+                                'assets/images/calc.png',
                                 height: 100,
                               ),
                               SizedBox(height: 10),
