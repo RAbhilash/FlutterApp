@@ -83,6 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       primary: false,
                       crossAxisCount: 2,
                       children: <Widget>[
+                        //this is personal data
+
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
@@ -102,6 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Card(
+                          //card 2:Books
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
                           elevation: 4,
@@ -109,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset(
-                                'images/calc.png',
+                                'images/calc.png', //add img here
                                 height: 100,
                               ),
                               SizedBox(height: 10),
@@ -121,6 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Card(
+                          //card 3:gpa
+
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
                           elevation: 10,
@@ -167,6 +172,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         //   },
                         // ),
                         Card(
+                          //card 4:course notes
+
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
                           elevation: 4,
