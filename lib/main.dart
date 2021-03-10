@@ -3,8 +3,8 @@ import 'package:app/home_screen.dart';
 import 'package:app/GPA.dart';
 import 'home_screen.dart';
 
-void main() => runApp(MyApp());
 
+void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,3 +14,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
