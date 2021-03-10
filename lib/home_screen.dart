@@ -1,8 +1,7 @@
 import 'package:app/GPA.dart';
+import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -58,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'John Richardo',
+                              'dummyuser',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
                                   color: Colors.white,
@@ -89,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          elevation: 4,
+                          elevation: 10,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -108,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 2:Books
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          elevation: 4,
+                          elevation: 10,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -177,24 +176,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         //     print("Tapped");
                         //   },
                         // ),
-                        Card(
-                          //card 4:course notes
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          elevation: 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/images/notes.png',
-                                height: 100,
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'Course Notes',
-                                style: cardTextStyle,
-                              )
-                            ],
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => notes()));
+                          },
+                          child: Card(
+                            //card 4:course notes
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            elevation: 10,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/images/notes.png',
+                                  height: 100,
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  'Course Notes',
+                                  style: cardTextStyle,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ],
