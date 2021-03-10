@@ -11,12 +11,13 @@ class Gpa extends StatefulWidget {
 class _GpaState extends State<Gpa> {
   /////////////////////////////////
   // String valueChosen1;
+
   List valueChosen = List<String>()..length = 11;
   List valueChosen1 = List<String>()..length = 11;
 
   List listItem = ["1", "2", "3", "4", "5", '6'];
-  List listItem1 = ["O", "A+", "A", "B+", "B", 'C+', 'D'];
-  String valueChosen11;
+  List listItem1 = ["O", "A+", "A", "B+", "B", 'C', 'F'];
+  // String valueChosen11;
   Widget DrpBt1(int i) {
     return DropdownButtonHideUnderline(
       child: Container(
@@ -72,6 +73,47 @@ class _GpaState extends State<Gpa> {
             }).toList()),
       ),
     );
+  }
+
+  var _output = 0.0;
+  int _hash(String a) {
+    if (a == "O")
+      return 100;
+    else if (a == "A+")
+      return 90;
+    else if (a == "A")
+      return 80;
+    else if (a == "B+")
+      return 70;
+    else if (a == "B")
+      return 60;
+    else if (a == "C")
+      return 55;
+    else if (a == "F")
+      return 50;
+    else
+      return 0;
+  }
+
+  _Calculatin() {
+    print("jo");
+    int ci = 0;
+    int ans = 0;
+    for (int i = 0; i < 11; i += 1) {
+      print(i);
+      // print(valueChosen[i]);
+
+      if (valueChosen[i] != null && valueChosen1[i] != null) {
+        ci = ci + int.parse(valueChosen[i]);
+        print(valueChosen[i].runtimeType);
+        int temp = _hash(valueChosen1[i]);
+        ans += (temp * int.parse(valueChosen[i]));
+      }
+    }
+    _output = ans / (ci * 10);
+    _output = double.parse((_output).toStringAsFixed(2));
+    // _output = _output.toString() as double;
+    print(_output);
   }
 
   @override
@@ -228,7 +270,69 @@ class _GpaState extends State<Gpa> {
                     /** till here yooo */
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: 20),
+              Container(
+                  decoration: BoxDecoration(
+                      // color: Colors.lightGreenAccent,
+                      // border: Border.all(width: .1),
+                      borderRadius: BorderRadius.circular(20)),
+                  height: MediaQuery.of(context).size.height / 13,
+                  width: MediaQuery.of(context).size.width / 2,
+                  // height: 50,
+                  // decoration: Decoration()
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            height: 40,
+                            decoration: BoxDecoration(
+                                // color: Colors.white12,
+                                border: Border.all(width: .1),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: RaisedButton(
+                                splashColor: Colors.orange,
+                                elevation: 0,
+                                onLongPress: () =>
+                                    (context as Element).reassemble(),
+                                onPressed: (() {
+                                  print("hii");
+                                  setState(() {
+                                    _Calculatin();
+                                  });
+                                }),
+                                color: Colors.white30,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0)),
+                                child: Text(
+                                  "lets go",
+                                  textAlign: TextAlign.center,
+                                )),
+                          )),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.white38,
+                              border: Border.all(width: .1),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: RaisedButton(
+                            color: Colors.transparent,
+                            elevation: 0,
+                            child: Text(
+                              _output.toString(),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          // height: 40,
+                        ),
+                      )
+                    ],
+                  ))
             ]),
           ],
         ));
