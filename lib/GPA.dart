@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:app/home_screen.dart';
 import 'package:app/main.dart';
@@ -15,32 +17,34 @@ class _GpaState extends State<Gpa> {
   List valueChosen = List<String>()..length = 11;
   List valueChosen1 = List<String>()..length = 11;
 
-  List listItem = ["1", "2", "3", "4", "5", '6'];
+  List listItem = ["0", "1", "2", "3", "4", "5", "6"];
   List listItem1 = ["O", "A+", "A", "B+", "B", 'C', 'F'];
   // String valueChosen11;
   Widget DrpBt1(int i) {
-    return DropdownButtonHideUnderline(
-      child: Container(
-        decoration: BoxDecoration(
-            border: Border.all(width: .1),
-            borderRadius: BorderRadius.circular(20)),
-        child: DropdownButton(
-            hint: Text(
-              "    click",
-              textAlign: TextAlign.center,
-            ),
-            value: valueChosen1[i],
-            onChanged: (newValue) {
-              setState(() {
-                this.valueChosen1[i] = newValue;
-              });
-            },
-            items: listItem1.map((valueItem) {
-              return DropdownMenuItem(
-                value: valueItem,
-                child: Text(valueItem),
-              );
-            }).toList()),
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(width: .1),
+          borderRadius: BorderRadius.circular(12)),
+      child: Center(
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton(
+              hint: Text(
+                "0",
+                textAlign: TextAlign.center,
+              ),
+              value: valueChosen1[i],
+              onChanged: (newValue) {
+                setState(() {
+                  this.valueChosen1[i] = newValue;
+                });
+              },
+              items: listItem1.map((valueItem) {
+                return DropdownMenuItem(
+                  value: valueItem,
+                  child: Center(child: Text(valueItem)),
+                );
+              }).toList()),
+        ),
       ),
     );
   }
@@ -49,28 +53,34 @@ class _GpaState extends State<Gpa> {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(width: .1),
-          borderRadius: BorderRadius.circular(20)),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton(
-            hint: Text(
-              "     click",
-              textAlign: TextAlign.center,
-            ),
-            value: valueChosen[i],
-            onChanged: (newValue) {
-              setState(() {
-                this.valueChosen[i] = newValue;
-              });
-            },
-            items: listItem.map((valueItem) {
-              return DropdownMenuItem(
-                value: valueItem,
+          borderRadius: BorderRadius.circular(12)),
+      child: Center(
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton(
+              hint: Center(
                 child: Text(
-                  valueItem,
+                  "0",
                   textAlign: TextAlign.center,
                 ),
-              );
-            }).toList()),
+              ),
+              value: valueChosen[i],
+              onChanged: (newValue) {
+                setState(() {
+                  this.valueChosen[i] = newValue;
+                });
+              },
+              items: listItem.map((valueItem) {
+                return DropdownMenuItem(
+                  value: valueItem,
+                  child: Center(
+                    child: Text(
+                      valueItem,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                );
+              }).toList()),
+        ),
       ),
     );
   }
@@ -131,7 +141,7 @@ class _GpaState extends State<Gpa> {
               // alignment: ,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/calc2.jpeg"),
+                      image: AssetImage('assets/images/calc2.jpeg'),
                       fit: BoxFit.fill)),
             ),
             Column(children: [
@@ -141,118 +151,320 @@ class _GpaState extends State<Gpa> {
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height / 15,
-                  width: MediaQuery.of(context).size.width / 1.2,
-                  child: Card(
-                      child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          "S.No",
-                          textAlign: TextAlign.center,
-                          textScaleFactor: 2,
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Text(
-                          "credit",
-                          textAlign: TextAlign.center,
-                          textScaleFactor: 2,
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Text(
-                          "Grade",
-                          textAlign: TextAlign.center,
-                          textScaleFactor: 2,
-                        ),
-                      )
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 26,
+                          spreadRadius: 10,
+                          color: Colors.black26)
                     ],
-                  )),
+                  ),
+                  child: ClipRRect(
+                    //clipper: can use this to get rounded corner
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white54,
+                            borderRadius: BorderRadius.circular(12)),
+                        height: MediaQuery.of(context).size.height / 15,
+                        width: MediaQuery.of(context).size.width / 1.2,
+                        child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            elevation: 0,
+                            color: Colors.transparent,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    "S.No",
+                                    textAlign: TextAlign.center,
+                                    textScaleFactor: 2,
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    "credit",
+                                    textAlign: TextAlign.center,
+                                    textScaleFactor: 2,
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    "Grade",
+                                    textAlign: TextAlign.center,
+                                    textScaleFactor: 2,
+                                  ),
+                                )
+                              ],
+                            )),
+                      ),
+                    ),
+                  ),
                 ),
               ),
+              SizedBox(
+                height: 7,
+              ),
               Container(
+                decoration: BoxDecoration(
+                  color: Colors.white24,
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 30, spreadRadius: 18, color: Colors.black26)
+                  ],
+                ),
                 height: MediaQuery.of(context).size.height / 1.6,
                 width: MediaQuery.of(context).size.width / 1.2,
-                color: Colors.white60,
                 child: GridView.count(
-                  childAspectRatio: (3.5),
+                  childAspectRatio: (2.5),
                   crossAxisCount: 3,
                   children: [
-                    Card(
-                        child: Text(
-                      "1",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(1)),
-                    Card(child: DrpBt1(1)),
+                    ClipRRect(
+                        child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                            child: Card(
+                                color: Colors.white60,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "1",
+                                    textAlign: TextAlign.center,
+                                  ),
+                                )))),
+                    ClipRRect(
+                        child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                            child: Card(
+                                color: Colors.white60,
+                                child: DrpBt(1),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                )))),
+                    ClipRRect(
+                        child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                            child: Card(
+                                color: Colors.white60,
+                                child: DrpBt1(1),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                )))),
 
                     /**from here i will be repeating all the above widget yooo */
                     Card(
-                        child: Text(
-                      "2",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(2)),
-                    Card(child: DrpBt1(2)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "2",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
                     Card(
-                        child: Text(
-                      "3",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(3)),
-                    Card(child: DrpBt1(3)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(2)),
                     Card(
-                        child: Text(
-                      "4",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(4)),
-                    Card(child: DrpBt1(4)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(2)),
                     Card(
-                        child: Text(
-                      "5",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(5)),
-                    Card(child: DrpBt1(5)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "3",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
                     Card(
-                        child: Text(
-                      "6",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(6)),
-                    Card(child: DrpBt1(6)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(3)),
                     Card(
-                        child: Text(
-                      "7",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(7)),
-                    Card(child: DrpBt1(7)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(3)),
                     Card(
-                        child: Text(
-                      "8",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(8)),
-                    Card(child: DrpBt1(8)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "4",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
                     Card(
-                        child: Text(
-                      "9",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(9)),
-                    Card(child: DrpBt1(9)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(4)),
                     Card(
-                        child: Text(
-                      "10",
-                      textAlign: TextAlign.center,
-                    )),
-                    Card(child: DrpBt(10)),
-                    Card(child: DrpBt1(10)),
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(4)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "5",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(5)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(5)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "6",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(6)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(6)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "7",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(7)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(7)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "8",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(8)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(8)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "9",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(9)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(9)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "10",
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt(10)),
+                    Card(
+                        color: Colors.white70,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DrpBt1(10)),
                     // Card(
                     //     child: Text(
                     //   "11",
@@ -284,55 +496,66 @@ class _GpaState extends State<Gpa> {
                   child: Row(
                     children: [
                       Expanded(
-                          flex: 1,
                           child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                                // color: Colors.white12,
-                                border: Border.all(width: .1),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: RaisedButton(
-                                splashColor: Colors.orange,
-                                elevation: 0,
-                                onLongPress: () =>
-                                    (context as Element).reassemble(),
-                                onPressed: (() {
-                                  print("hii");
-                                  setState(() {
-                                    _Calculatin();
-                                  });
-                                }),
-                                color: Colors.white30,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18.0)),
-                                child: Text(
-                                  "lets go",
-                                  textAlign: TextAlign.center,
-                                )),
-                          )),
+                        height: 50,
+                        decoration: BoxDecoration(
+                            // color: Colors.white12,
+                            border: Border.all(width: .1),
+                            borderRadius: BorderRadius.circular(25)),
+                        child: RaisedButton(
+                            hoverElevation: 0,
+                            disabledElevation: 1,
+                            focusElevation: 0,
+                            highlightElevation: 0,
+                            onLongPress: (() {
+                              Future.delayed(const Duration(milliseconds: 600),
+                                  () {
+                                setState(() {
+                                  valueChosen = List<String>()..length = 11;
+                                  valueChosen1 = List<String>()..length = 11;
+                                  // Here you can write your code for open new view
+                                });
+                              });
+                            }),
+                            splashColor: Colors.cyan,
+                            elevation: 0,
+                            onPressed: (() {
+                              print("hii");
+                              setState(() {
+                                _Calculatin();
+                              });
+                            }),
+                            color: Colors.white30,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
+                            child: Text(
+                              "lets go",
+                              textAlign: TextAlign.center,
+                            )),
+                      )),
                       SizedBox(
                         width: 15,
                       ),
                       Expanded(
-                        child: Container(
-                          height: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.white38,
-                              border: Border.all(width: .1),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: RaisedButton(
-                            color: Colors.transparent,
-                            elevation: 0,
-                            child: Text(
-                              _output.toString(),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          // height: 40,
-                        ),
-                      )
+                          child: Container(
+                              height: 50,
+                              padding: EdgeInsets.fromLTRB(0, 15, 0, 8),
+                              decoration: BoxDecoration(
+                                  color: Colors.white24,
+                                  border: Border.all(width: .1),
+                                  borderRadius: BorderRadius.circular(25)),
+                              child: Text(_output.toString(),
+                                  textAlign: TextAlign.center))),
                     ],
-                  ))
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Long Press for reset",
+                style: TextStyle(
+                    fontSize: 12, color: Colors.black.withOpacity(.5)),
+              )
             ]),
           ],
         ));
