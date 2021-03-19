@@ -43,6 +43,7 @@ class _notesState extends State<notes> {
           return new GestureDetector(
               onTap: () {},
               child: new Card(
+                color: Colors.transparent,
                 elevation: 5.0,
                 margin:
                     new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
