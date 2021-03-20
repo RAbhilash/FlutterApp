@@ -54,6 +54,8 @@ flutter:
     - assets/images/personal.png
     - assets/images/books.png
     - assets/images/calc2.jpeg
+    - assets/json/sem1.json
+    - assets/json/sem2.json
     
 
   # To add assets to your application, add an assets section, like this:
