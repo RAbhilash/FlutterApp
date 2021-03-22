@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'dart:async';
+
+class detail {
+  final String name, asset, subtext;
+  detail(this.name, this.asset, this.subtext);
+}
 
 class yearone extends StatelessWidget {
-  List data;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,123 +28,119 @@ class yearone extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              _sem1(context),
-              _sem2(context),
+              _sem1(),
+              _sem2(),
             ],
           )),
     );
   }
 
-  ListView _sem1(BuildContext context) {
+  ListView _sem1() {
     FutureBuilder(
-        future:
-            DefaultAssetBundle.of(context).loadString('assets/json/sem1.json'),
-        builder: (context, snapshot) {
-          // Decode the JSON
-          if (!snapshot.hasData)
-            return Container();
-          else {
-            var newData = json.decode(snapshot.data.toString());
-            return ListView.builder(
-                itemCount: newData == null ? 0 : newData.length,
-                itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        child: FittedBox(
-                          child: Material(
-                              color: Colors.white,
-                              elevation: 10.0,
-                              borderRadius: BorderRadius.circular(24.0),
-                              shadowColor: Color(0x802196F3),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Container(
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 16.0),
-                                      child: tableft(newData[index]['name'],
-                                          newData[index]['subtext']),
-                                    ),
+        future: json1(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) return Container();
+          return ListView.builder(
+              itemCount: snapshot.data.length(),
+              itemBuilder: (BuildContext context, int index) => Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      child: FittedBox(
+                        child: Material(
+                            color: Colors.white,
+                            elevation: 10.0,
+                            borderRadius: BorderRadius.circular(24.0),
+                            shadowColor: Color(0x802196F3),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 16.0),
+                                    child: tableft(snapshot.data[index].name,
+                                        snapshot.data[index].subtext),
                                   ),
-                                  Container(
-                                    width: 190,
-                                    height: 100,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      child: Image(
-                                        fit: BoxFit.contain,
-                                        alignment: Alignment.topRight,
-                                        image: NetworkImage(
-                                          newData[index]['asset'],
-                                        ),
+                                ),
+                                Container(
+                                  width: 190,
+                                  height: 100,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(24.0),
+                                    child: Image(
+                                      fit: BoxFit.contain,
+                                      alignment: Alignment.topRight,
+                                      image: NetworkImage(
+                                        snapshot.data[index].asset,
                                       ),
                                     ),
                                   ),
-                                ],
-                              )),
-                        ),
+                                ),
+                              ],
+                            )),
                       ),
-                    ));
-          }
+                    ),
+                  ));
         });
   }
 
-  ListView _sem2(BuildContext context) {
+  ListView _sem2() {
     FutureBuilder(
-        future:
-            DefaultAssetBundle.of(context).loadString('assets/json/sem2.json'),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData)
-            return Container();
-          else {
-            // Decode the JSON
-            var newData = json.decode(snapshot.data.toString());
-            return ListView.builder(
-                itemCount: newData == null ? 0 : newData.length,
-                itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        child: FittedBox(
-                          child: Material(
-                              color: Colors.white,
-                              elevation: 10.0,
-                              borderRadius: BorderRadius.circular(24.0),
-                              shadowColor: Color(0x802196F3),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Container(
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 16.0),
-                                      child: tabright(newData[index]['name'],
-                                          newData[index]['subtext']),
+        future: json2(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) return Container();
+          return ListView.builder(
+              itemCount: snapshot.data.length(),
+              itemBuilder: (BuildContext context, int index) => Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      child: FittedBox(
+                        child: Material(
+                            color: Colors.white,
+                            elevation: 10.0,
+                            borderRadius: BorderRadius.circular(24.0),
+                            shadowColor: Color(0x802196F3),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 16.0),
+                                    child: tabright(snapshot.data[index].name,
+                                        snapshot.data[index].subtext),
+                                  ),
+                                ),
+                                Container(
+                                  width: 190,
+                                  height: 100,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(24.0),
+                                    child: Image(
+                                      fit: BoxFit.contain,
+                                      alignment: Alignment.topRight,
+                                      image: NetworkImage(
+                                          snapshot.data[index].asset),
                                     ),
                                   ),
-                                  Container(
-                                    width: 190,
-                                    height: 100,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      child: Image(
-                                        fit: BoxFit.contain,
-                                        alignment: Alignment.topRight,
-                                        image: NetworkImage(
-                                            newData[index]['asset']),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )),
-                        ),
+                                ),
+                              ],
+                            )),
                       ),
-                    ));
-          }
+                    ),
+                  ));
         });
   }
+}
+
+Future<List<detail>> json1({BuildContext context}) async {
+  var list =
+      await DefaultAssetBundle.of(context).loadString('assets/json/sem1.json');
+  return json.decode(list);
+}
+
+Future<List<detail>> json2({BuildContext context}) async {
+  var list =
+      await DefaultAssetBundle.of(context).loadString('assets/json/sem2.json');
+  return json.decode(list);
 }
 
 Widget tableft(String s, String subtext) {
