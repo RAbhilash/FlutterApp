@@ -21,10 +21,10 @@ class yearone extends StatelessWidget {
             bottom: TabBar(
               tabs: <Widget>[
                 Tab(
-                  text: 'Sem 1',
+                  text: 'Sem 3',
                 ),
                 Tab(
-                  text: 'Sem 2',
+                  text: 'Sem 4',
                 ),
               ],
             ),
