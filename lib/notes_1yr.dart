@@ -11,6 +11,12 @@ class yearone extends StatelessWidget {
   List<String> subtext1 = ["subtext1", "subtext2", "subtext3"],
       subtext2 = ["subtext1", "subtext2", "subtext3"];
   List<String> asset1 = [""], asset2 = [""];
+  yearone() {
+    subject1.sort();
+    subject2.sort();
+    subtext1.sort();
+    subtext2.sort();
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -31,26 +37,19 @@ class yearone extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              _sem1(subject1, subtext1),
-              _sem2(subject2, subtext2),
+              _sem(subject1, subtext1),
+              _sem(subject2, subtext2),
             ],
           )),
     );
   }
 
-  ListView _sem1(List<String> subject1, List<String> subtext1) {
+  ListView _sem(List<String> subject, List<String> subtext) {
     return ListView.builder(
-        itemCount: subject1.length,
+        itemCount: subject.length,
         itemBuilder: (BuildContext context, int index) =>
-            item(index, subject1, subtext1));
+            item(index, subject, subtext));
   }
-}
-
-ListView _sem2(List<String> subject2, List<String> subtext2) {
-  return ListView.builder(
-      itemCount: subject2.length,
-      itemBuilder: (BuildContext context, int index) =>
-          item(index, subject2, subtext2));
 }
 
 Widget item(int index, List<String> subject, List<String> subtext) {

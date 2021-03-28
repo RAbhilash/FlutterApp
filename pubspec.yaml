@@ -48,15 +48,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/top_header.png
-    - assets/images/calc.png
-    - assets/images/notes.png
-    - assets/images/personal.png
-    - assets/images/books.png
-    - assets/images/calc2.jpeg
-    - assets/json/sem1.json
-    - assets/json/sem2.json
-    
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
