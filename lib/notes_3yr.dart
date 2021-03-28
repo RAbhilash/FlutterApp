@@ -5,13 +5,13 @@ class detail {
   detail(this.name, this.asset, this.subtext);
 }
 
-class yeartwo extends StatelessWidget {
+class yearthree extends StatelessWidget {
   List<String> subject1 = ["Physics", "Electrical", "English"],
       subject2 = ["Mechanical", "Chemisty", "PPS"];
   List<String> subtext1 = ["subtext1", "subtext2", "subtext3"],
       subtext2 = ["subtext1", "subtext2", "subtext3"];
   List<String> asset1 = [""], asset2 = [""];
-  yeartwo() {
+  yearthree() {
     subject1.sort();
     subject2.sort();
     subtext1.sort();
@@ -23,14 +23,14 @@ class yeartwo extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('Second Year'),
+            title: Text('Third Year'),
             bottom: TabBar(
               tabs: <Widget>[
                 Tab(
-                  text: 'Sem 3',
+                  text: 'Sem 5',
                 ),
                 Tab(
-                  text: 'Sem 4',
+                  text: 'Sem 6',
                 ),
               ],
             ),
