@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
 class detail {
-  final String name, asset, subtext;
-  detail(this.name, this.asset, this.subtext);
+  String subject, asset, subtext;
+  detail(this.subject, this.asset, this.subtext);
 }
 
 class yearone extends StatelessWidget {
-  List<String> subject1 = ["Physics", "Electrical", "English"],
-      subject2 = ["Mechanical", "Chemisty", "PPS"];
-  List<String> subtext1 = ["subtext1", "subtext2", "subtext3"],
-      subtext2 = ["subtext1", "subtext2", "subtext3"];
-  List<String> asset1 = [""], asset2 = [""];
-  yearone() {
-    subject1.sort();
-    subject2.sort();
-    subtext1.sort();
-    subtext2.sort();
-  }
   @override
   Widget build(BuildContext context) {
+    List<detail> data1 = [], data2 = [];
+    data1.add(detail("Physics", "assets/images/thumbnail.jpg", "subtext1"));
+    data1.add(detail("Electrical", "assets/images/thumbnail.jpg", "subtext2"));
+    data1.add(detail("English", "assets/images/thumbnail.jpg", "subtext3"));
+    data2.add(detail("Mechanical", "assets/images/thumbnail.jpg", "subtext1"));
+    data2.add(detail("Chemistry", "assets/images/thumbnail.jpg", "subtext2"));
+    data2.add(detail("PPS", "assets/images/thumbnail.jpg", "subtext3"));
+    Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
+    data1.sort(comp);
+    data2.sort(comp);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -37,22 +36,22 @@ class yearone extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              _sem(subject1, subtext1),
-              _sem(subject2, subtext2),
+              _sem(data1),
+              _sem(data2),
             ],
           )),
     );
   }
 
-  ListView _sem(List<String> subject, List<String> subtext) {
+  ListView _sem(List<detail> data) {
     return ListView.builder(
-        itemCount: subject.length,
-        itemBuilder: (BuildContext context, int index) =>
-            item(index, subject, subtext));
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) => item(index,
+            data[index].subject, data[index].subtext, data[index].asset));
   }
 }
 
-Widget item(int index, List<String> subject, List<String> subtext) {
+Widget item(int index, String subject, String subtext, String asset) {
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -68,7 +67,7 @@ Widget item(int index, List<String> subject, List<String> subtext) {
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0),
-                    child: tab(subject[index], subtext[index]),
+                    child: tab(subject, subtext),
                   ),
                 ),
                 Container(
@@ -79,7 +78,7 @@ Widget item(int index, List<String> subject, List<String> subtext) {
                     child: Image(
                       fit: BoxFit.contain,
                       alignment: Alignment.topRight,
-                      image: AssetImage("assets/images/thumbnail.jpg"),
+                      image: AssetImage(asset),
                     ),
                   ),
                 ),

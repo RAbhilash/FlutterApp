@@ -145,7 +145,7 @@ class notes extends StatelessWidget {
                         flex: 1,
                         child: Center(
                           child: Text(
-                            'Fourth Year',
+                            'FOURTH YEAR',
                             style: TextStyle(fontFamily: "Montserrat Regular"),
                           ),
                         ),
