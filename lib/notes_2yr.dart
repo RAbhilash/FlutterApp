@@ -7,8 +7,8 @@ class detail {
 
 class yeartwo extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    List<detail> data1 = [], data2 = [];
+  List<detail> data1 = [], data2 = [];
+  yeartwo() {
     data1.add(detail("Physics", "assets/images/thumbnail.jpg", "subtext1"));
     data1.add(detail("Electrical", "assets/images/thumbnail.jpg", "subtext2"));
     data1.add(detail("English", "assets/images/thumbnail.jpg", "subtext3"));
@@ -18,10 +18,13 @@ class yeartwo extends StatelessWidget {
     Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
     data1.sort(comp);
     data2.sort(comp);
+  }
+  Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.orange,
             title: Text('Second Year'),
             bottom: TabBar(
               tabs: <Widget>[
