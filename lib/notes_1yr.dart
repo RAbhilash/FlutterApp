@@ -21,7 +21,7 @@ class yearone extends StatelessWidget {
   List<detail> data1 = [], data2 = [];
   yearone() {
     data1.add(detail("Physics", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
     data1.add(detail("Electrical", "assets/images/thumbnail.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail("English", "assets/images/thumbnail.jpg",
