@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'webdisplay.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class detail {
   String subject, asset, subtext;
@@ -20,8 +18,8 @@ class yearthree extends StatelessWidget {
   @override
   List<detail> data1 = [], data2 = [];
   yearthree() {
-    data1.add(detail("Physics", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+    data1.add(detail("Theory of Computation", "assets/images/automata.png",
+        "https://drive.google.com/drive/folders/10n7qFW0SYVZng8ww-f2Rb-kFnA62QzU0?usp=sharing"));
     data1.add(detail("Electrical", "assets/images/thumbnail.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail("English", "assets/images/thumbnail.jpg",
@@ -75,12 +73,7 @@ Widget item(BuildContext context, int index, String subject, String subtext,
     String asset) {
   return GestureDetector(
     onTap: () {
-      if (kIsWeb) {
-        launchurl(subtext);
-      } else {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => webview(url: subtext)));
-      }
+      launchurl(subtext);
     },
     child: Padding(
       padding: const EdgeInsets.all(16.0),
@@ -128,6 +121,7 @@ Widget tab(String s, String subtext) {
       Padding(
         padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
         child: Container(
+          width: 100,
           child: Text(
             s,
             softWrap: true,
