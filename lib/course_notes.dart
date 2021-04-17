@@ -80,11 +80,8 @@ class notes extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Container(
-                            constraints: BoxConstraints(
-                              minHeight: 200,
-                              minWidth: 200,
-                            ),
+                          Expanded(
+                            flex: 5,
                             child: Image(
                               image: AssetImage('assets/images/yeartwo.png'),
                             ),
@@ -164,14 +161,15 @@ class notes extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Flexible(
+                          Expanded(
+                              flex: 4,
                               child: Container(
-                            constraints:
-                                BoxConstraints(minHeight: 500, minWidth: 500),
-                            child: Image(
-                                image:
-                                    AssetImage('assets/images/yearfour.png')),
-                          )),
+                                constraints: BoxConstraints(
+                                    minHeight: 500, minWidth: 500),
+                                child: Image(
+                                    image: AssetImage(
+                                        'assets/images/yearfour.png')),
+                              )),
                           Expanded(
                             flex: 1,
                             child: Center(
