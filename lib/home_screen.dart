@@ -9,6 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  get icon => null;
+
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -25,13 +27,32 @@ class _HomeScreenState extends State<HomeScreen> {
         fit: StackFit.loose,
         children: <Widget>[
           Container(
-            height: size.height * .3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  alignment: Alignment.topCenter,
-                  image: AssetImage('assets/images/top_header.png')),
-            ),
+              // height: size.height * .3,
+              decoration:
+                  BoxDecoration(color: Color.fromRGBO(220, 220, 220, 200))),
+          Stack(
+            children: [
+              Container(
+                height: size.height * .5,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(100),
+                        bottomRight: Radius.circular(100)),
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/images/background.png"))),
+              ),
+              Column(children: [
+                SizedBox(height: size.height * .15),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/gifs/tele.png")),
+                  ),
+                )
+              ])
+            ],
           ),
           SafeArea(
             child: Padding(
@@ -57,14 +78,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'dummyuser',
+                              'AdityaPratapSingh',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
                                   color: Colors.white,
                                   fontSize: 20),
                             ),
                             Text(
-                              '4101410141',
+                              'YO ',
                               style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.redAccent,
@@ -74,6 +95,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 130,
                   ),
                   Expanded(
                     child: GridView.count(
@@ -85,20 +109,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         //this is personal data
                         //card 1: personal
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          elevation: 10,
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border(
+                                  bottom: BorderSide(
+                                      color: Colors.blue, width: 5))),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Image.asset(
-                                'assets/images/personal.png',
-                                height: 100,
+                              Expanded(
+                                flex: 5,
+                                child: Icon(Icons.note,
+                                    color: Colors.blue, size: 100),
                               ),
-                              Text(
-                                'Personal Data',
-                                style: cardTextStyle,
+                              Expanded(
+                                child: Text(
+                                  'Personal Data',
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               )
                             ],
                           ),
