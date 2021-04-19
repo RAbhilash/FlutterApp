@@ -4,6 +4,7 @@ import 'package:app/books2.dart';
 import 'package:app/books3.dart';
 import 'package:app/books4.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+
 class Books extends StatefulWidget {
   @override
   _BooksState createState() => _BooksState();
@@ -14,56 +15,54 @@ class _BooksState extends State<Books> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      backgroundColor: Colors.pink[50],
-      iconTheme: IconThemeData(
-        color: Colors.black,
-      ),
-        title: Text(
-          'Books',
-          style:TextStyle(
-            color:Colors.black,
-          )
+        backgroundColor: Colors.pink[50],
+        iconTheme: IconThemeData(
+          color: Colors.black,
         ),
+        title: Text('Books',
+            style: TextStyle(
+              color: Colors.black,
+            )),
         centerTitle: true,
       ),
       body: Container(
-        color:Colors.deepPurple[900],
-              child: Stack(
+        color: Colors.deepPurple[900],
+        child: Stack(
           children: <Widget>[
-          Column(
-            children: <Widget>[
-              SizedBox(
-                height:10,
-              ),
-              ClipPath(
-                clipper:ShapeBorderClipper(shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                )),
-                            child: Container(
-                  height: 200,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    // color: Colors.blue,
-                    image:DecorationImage(
-                    image:AssetImage('assets/images/lib1.png'),
-                    fit:BoxFit.fill,
-                    )
+            Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 10,
+                ),
+                ClipPath(
+                  clipper: ShapeBorderClipper(
+                      shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  )),
+                  child: Container(
+                    height: 200,
+                    width: 200,
+                    decoration: BoxDecoration(
+                        // color: Colors.blue,
+                        image: DecorationImage(
+                      image: AssetImage('assets/images/lib1.png'),
+                      fit: BoxFit.fill,
+                    )),
                   ),
                 ),
-              ),
-              SizedBox(height:40),
-            Container(
-              color:Colors.white,
-                          child: Center(
-              child: GridView.count(
-                shrinkWrap: true,
-                padding: EdgeInsets.fromLTRB(20, 20, 15, 15),
-                crossAxisCount: 2,
-                mainAxisSpacing: 40,
-                crossAxisSpacing: 20,
-                primary: false,
-                children: <Widget>[
-                 Theme(
+                SizedBox(height: 40),
+                Container(
+                  color: Colors.white,
+                  child: Center(
+                    child: GridView.count(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.fromLTRB(20, 20, 15, 15),
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 40,
+                      crossAxisSpacing: 20,
+                      primary: false,
+                      children: <Widget>[
+                        Theme(
                           data: ThemeData(splashColor: Colors.orange),
                           child: InkWell(
                             highlightColor: Colors.transparent,
@@ -74,54 +73,51 @@ class _BooksState extends State<Books> {
                                   MaterialPageRoute(
                                       builder: (context) => booksyearone()));
                             },
-                            
-                              child: ClipPath(
-                                clipper: ShapeBorderClipper(shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(10)))),
-                                child: Container(
-                                    decoration: BoxDecoration(
+                            child: ClipPath(
+                              clipper: ShapeBorderClipper(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10)))),
+                              child: Container(
+                                decoration: BoxDecoration(
                                     border: Border(
-                                      bottom: BorderSide(
-                                        width:10,
-                                        color:Colors.green,
-                                      )
-                                    )
-                                    ),
-                                    child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Expanded(
-                                          flex: 5,
-                                          child: SizedBox(
-                                            width: 100,
-                                            child: Image(
-                                                image: AssetImage(
-                                                    'assets/images/yearone.png')),
-                                          ),
+                                        bottom: BorderSide(
+                                  width: 10,
+                                  color: Colors.green,
+                                ))),
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: 100,
+                                          child: Image(
+                                              image: AssetImage(
+                                                  'assets/images/yearone.png')),
                                         ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Center(
-                                            child: Text(
-                                              'FIRST YEAR',
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    "Montserrat Regular",
-                                              ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Center(
+                                          child: Text(
+                                            'FIRST YEAR',
+                                            style: TextStyle(
+                                              fontFamily: "Montserrat Regular",
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                  Theme(
+                        ),
+                        Theme(
                           data: ThemeData(splashColor: Colors.yellow),
                           child: InkWell(
                             highlightColor: Colors.transparent,
@@ -132,53 +128,50 @@ class _BooksState extends State<Books> {
                                   MaterialPageRoute(
                                       builder: (context) => booksyeartwo()));
                             },
-                            
-                              child: ClipPath(
-                                clipper: ShapeBorderClipper(shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(10)))),
-                                child: Container(
-                                    decoration: BoxDecoration(
+                            child: ClipPath(
+                              clipper: ShapeBorderClipper(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10)))),
+                              child: Container(
+                                decoration: BoxDecoration(
                                     border: Border(
-                                      bottom: BorderSide(
-                                        width:10,
-                                        color:Colors.red,
-                                      )
-                                    )
-                                    ),
-                                    child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Expanded(
-                                          flex: 5,
-                                          child: SizedBox(
-                                            width: 100,
-                                            child: Image(
-                                                image: AssetImage(
-                                                    'assets/images/yeartwo.png')),
-                                          ),
+                                        bottom: BorderSide(
+                                  width: 10,
+                                  color: Colors.red,
+                                ))),
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: 100,
+                                          child: Image(
+                                              image: AssetImage(
+                                                  'assets/images/yeartwo.png')),
                                         ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Center(
-                                            child: Text(
-                                              'SECOND YEAR',
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    "Montserrat Regular",
-                                              ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Center(
+                                          child: Text(
+                                            'SECOND YEAR',
+                                            style: TextStyle(
+                                              fontFamily: "Montserrat Regular",
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
+                        ),
                         Theme(
                           data: ThemeData(splashColor: Colors.blue),
                           child: InkWell(
@@ -190,53 +183,50 @@ class _BooksState extends State<Books> {
                                   MaterialPageRoute(
                                       builder: (context) => booksyearthree()));
                             },
-                            
-                              child: ClipPath(
-                                clipper: ShapeBorderClipper(shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(10)))),
-                                child: Container(
-                                    decoration: BoxDecoration(
+                            child: ClipPath(
+                              clipper: ShapeBorderClipper(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10)))),
+                              child: Container(
+                                decoration: BoxDecoration(
                                     border: Border(
-                                      bottom: BorderSide(
-                                        width:10,
-                                        color:Colors.yellow,
-                                      )
-                                    )
-                                    ),
-                                    child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Expanded(
-                                          flex: 5,
-                                          child: SizedBox(
-                                            width: 100,
-                                            child: Image(
-                                                image: AssetImage(
-                                                    'assets/images/yearthree.png')),
-                                          ),
+                                        bottom: BorderSide(
+                                  width: 10,
+                                  color: Colors.yellow,
+                                ))),
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: 100,
+                                          child: Image(
+                                              image: AssetImage(
+                                                  'assets/images/yearthree.png')),
                                         ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Center(
-                                            child: Text(
-                                              'THIRD YEAR',
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    "Montserrat Regular",
-                                              ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Center(
+                                          child: Text(
+                                            'THIRD YEAR',
+                                            style: TextStyle(
+                                              fontFamily: "Montserrat Regular",
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
+                        ),
                         Theme(
                           data: ThemeData(splashColor: Colors.purple),
                           child: InkWell(
@@ -248,59 +238,56 @@ class _BooksState extends State<Books> {
                                   MaterialPageRoute(
                                       builder: (context) => booksyearfour()));
                             },
-                            
-                              child: ClipPath(
-                                clipper: ShapeBorderClipper(shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(10)))),
-                                child: Container(
-                                    decoration: BoxDecoration(
+                            child: ClipPath(
+                              clipper: ShapeBorderClipper(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(10)))),
+                              child: Container(
+                                decoration: BoxDecoration(
                                     border: Border(
-                                      bottom: BorderSide(
-                                        width:10,
-                                        color:Colors.white,
-                                      )
-                                    )
-                                    ),
-                                    child: Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Expanded(
-                                          flex: 5,
-                                          child: SizedBox(
-                                            width: 100,
-                                            child: Image(
-                                                image: AssetImage(
-                                                    'assets/images/yearfour.png')),
-                                          ),
+                                        bottom: BorderSide(
+                                  width: 10,
+                                  color: Colors.white,
+                                ))),
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: 100,
+                                          child: Image(
+                                              image: AssetImage(
+                                                  'assets/images/yearfour.png')),
                                         ),
-                                        Expanded(
-                                          flex: 1,
-                                          child: Center(
-                                            child: Text(
-                                              'Fourth YEAR',
-                                              style: TextStyle(
-                                                fontFamily:
-                                                    "Montserrat Regular",
-                                              ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Center(
+                                          child: Text(
+                                            'Fourth YEAR',
+                                            style: TextStyle(
+                                              fontFamily: "Montserrat Regular",
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                ],
-              ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+              ],
             ),
-            ],
-          ),
           ],
         ),
       ),
