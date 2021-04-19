@@ -24,12 +24,22 @@ class yearthree extends StatelessWidget {
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail("English", "assets/images/thumbnail.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data2.add(detail("Mechanical", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data2.add(detail("Chemistry", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data2.add(detail("PPS", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+    data2.add(detail("AI", "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/1bN36XrhWWENw3bbWxUtP2GBw2QQVSyJg?usp=sharing"));
+    data2.add(detail("Aptitude", "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/1Wf9tB0xsyl5oOTIk8dMk5c_IrnCKJSbG?usp=sharing"));
+    data2.add(detail("DBMS", "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/1gxWNWx9AzHV2w6EyhhMFd4Pgx112-sw0?usp=sharing"));
+    data2.add(detail(
+        "Fiber Optics and Optoelectronics",
+        "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/1EX1hnnaQUb3K8EY5B3HU73Z337oiIwc0?usp=sharing"));
+    data2.add(detail(
+        "Network Routing Algorithms",
+        "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/143wpq1wIJXlFgC4QieRPd99ObBoPoKYa?usp=sharing"));
+    data2.add(detail("Network Security", "assets/images/thumbnail.jpg",
+        "https://drive.google.com/drive/folders/1dAcgSz7omfWkAaaU8ElFwxzEMBM8YpDl?usp=sharing"));
     Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
     data1.sort(comp);
     data2.sort(comp);
