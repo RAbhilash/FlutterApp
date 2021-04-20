@@ -4,7 +4,6 @@ import 'package:app/books.dart';
 import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -27,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: Container(
-        color:Colors.red[300],
-              child: Stack(
+        color: Colors.red[300],
+        child: Stack(
           fit: StackFit.loose,
           children: <Widget>[
             Stack(
@@ -39,15 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: size.height * .5,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(50),
-                            bottomRight: Radius.circular(50),
-                          ),
-                          // image: DecorationImage(
-                          //     fit: BoxFit.fill,
-                          //     image: AssetImage("assets/images/top_header.jpg"))
-                              ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(50),
+                          bottomRight: Radius.circular(50),
+                        ),
+                        // image: DecorationImage(
+                        //     fit: BoxFit.fill,
+                        //     image: AssetImage("assets/images/top_header.jpg"))
+                      ),
                     )
                   ],
                 ),
@@ -81,65 +80,67 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.all(16.0),
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 84,
-                      // color: Colors.yellow,
-                      margin: EdgeInsets.only(bottom: 210),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          CircleAvatar(
-                            radius: 32,
-                            backgroundImage: NetworkImage(
-                                'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
-                          ),
-                          SizedBox(
-                            width: 55,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              // Text(
-                              //   'SRM PRO',
-                              //   style: TextStyle(
-                              //       fontFamily: "Montserrat Medium",
-                              //       color: Colors.white,
-                              //       fontSize: 20),
-                              // ),
-                            DefaultTextStyle(
-                              style:const TextStyle(
-                                fontSize: 25,
-                                color: Colors.black
-                              ),
-                            child: AnimatedTextKit(
-                                repeatForever: true,
-                                pause: Duration(milliseconds: 1500),
-                                animatedTexts: [
-                                  // TyperAnimatedText('SRM FOREVER'),  
-                                  RotateAnimatedText('SRM'),
-                                  RotateAnimatedText('FOREVER'),
-                                ],
-                              ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        height: 84,
+                        // color: Colors.yellow,
+                        margin: EdgeInsets.only(bottom: 210),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: 32,
+                              backgroundImage: NetworkImage(
+                                  'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
                             ),
-                              // Text(
-                              //   '4101410141',
-                              //   style: TextStyle(
-                              //       fontSize: 14,
-                              //       color: Colors.redAccent,
-                              //       fontFamily: "Montserrat Regular"),
-                              // )
-                            ],
-                          )
-                        ],
+                            SizedBox(
+                              width: 55,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                // Text(
+                                //   'SRM PRO',
+                                //   style: TextStyle(
+                                //       fontFamily: "Montserrat Medium",
+                                //       color: Colors.white,
+                                //       fontSize: 20),
+                                // ),
+                                DefaultTextStyle(
+                                  style: const TextStyle(
+                                      fontSize: 25, color: Colors.black),
+                                  child: AnimatedTextKit(
+                                    repeatForever: true,
+                                    pause: Duration(milliseconds: 1500),
+                                    animatedTexts: [
+                                      // TyperAnimatedText('SRM FOREVER'),
+                                      RotateAnimatedText('SRM'),
+                                      RotateAnimatedText('FOREVER'),
+                                    ],
+                                  ),
+                                ),
+                                // Text(
+                                //   '4101410141',
+                                //   style: TextStyle(
+                                //       fontSize: 14,
+                                //       color: Colors.redAccent,
+                                //       fontFamily: "Montserrat Regular"),
+                                // )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 70,
-                    ),
+                    // SizedBox(
+                    //   height: 70,
+                    // ),
                     Expanded(
+                      flex: 1,
                       child: GridView.count(
-                        padding: const EdgeInsets.only(top:80),
+                        padding: const EdgeInsets.only(top: 80),
                         mainAxisSpacing: 30,
                         crossAxisSpacing: 20,
                         primary: false,
@@ -166,8 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           InkWell(
-                            onTap: (){
-                               Navigator.push(
+                            onTap: () {
+                              Navigator.push(
                                   context,
                                   PageRouteBuilder(
                                     transitionDuration: Duration(seconds: 1),
@@ -195,12 +196,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               elevation: 10,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  // image: DecorationImage(
-                                  //     fit: BoxFit.fill,
-                                  //     alignment: Alignment.topCenter,
-                                  //     // image: AssetImage('assets/images/g1.jpg')
-                                  //     ),
-                                ),
+                                    // image: DecorationImage(
+                                    //     fit: BoxFit.fill,
+                                    //     alignment: Alignment.topCenter,
+                                    //     // image: AssetImage('assets/images/g1.jpg')
+                                    //     ),
+                                    ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
@@ -221,8 +222,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 3:gpa
                           InkWell(
                             onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => Gpa()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Gpa()));
                             },
                             child: Card(
                               shape: RoundedRectangleBorder(
