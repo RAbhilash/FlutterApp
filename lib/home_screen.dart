@@ -156,17 +156,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 1: personal
                           Card(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(40)),
                             elevation: 10,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/images/personal.png',
+                                  'assets/images/fang.png',
                                   height: 100,
                                 ),
                                 Text(
-                                  'Personal Data',
+                                  'Placement Material',
                                   style: cardTextStyle,
                                 )
                               ],
@@ -198,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 2:Books
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Container(
                                 decoration: BoxDecoration(
@@ -235,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             child: Card(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -306,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 4:course notes
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
