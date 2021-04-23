@@ -137,7 +137,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 70),
+                    Container(
+                      height: 60,
+                      // decoration: BoxDecoration(
+                      // color: Colors.black,
+                      // borderRadius: BorderRadius.circular(1000)),
+                    ),
                     Expanded(
                       flex: 1,
                       child: GridView.count(
