@@ -165,10 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'assets/images/fang.png',
                                   height: 100,
                                 ),
-                                Text(
-                                  'Placement Material',
-                                  style: cardTextStyle,
-                                )
+                                SizedBox(height: 20),
+                                Text('Placement Material',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'cardTextStyle'))
                               ],
                             ),
                           ),
@@ -216,10 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 100,
                                     ),
                                     //SizedBox(height: 10),
-                                    Text(
-                                      'Books',
-                                      style: cardTextStyle,
-                                    )
+                                    SizedBox(height: 25),
+                                    Text('Books',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'cardTextStyle'))
                                   ],
                                 ),
                               ),
@@ -244,11 +248,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/calc.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'GPA Calculator',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('GPA Calculator',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
@@ -315,11 +320,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/notes.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'Course Notes',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('Course Notes',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
