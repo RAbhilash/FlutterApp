@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Regular",
         fontSize: 14,
-        color: Color.fromRGBO(63, 63, 63, 1));
+        color: Color.fromRGBO(63, 63, 63, 1)); //this is not really working
 
     return Scaffold(
       body: Container(
@@ -38,10 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: size.height * .5,
                       decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.black54,
+                              blurRadius: 40.0,
+                              offset: Offset(0.0, 0.75))
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(50),
-                          bottomRight: Radius.circular(50),
+                          bottomLeft: Radius.circular(80),
+                          bottomRight: Radius.circular(80),
                         ),
                         // image: DecorationImage(
                         //     fit: BoxFit.fill,
@@ -61,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)))),
+                                  BorderRadius.all(Radius.circular(30)))),
                       child: Container(
                         height: 200,
                         decoration: BoxDecoration(
@@ -131,9 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 70,
-                    ),
+                    SizedBox(height: 70),
                     Expanded(
                       child: GridView.count(
                         padding: const EdgeInsets.only(top: 80),
