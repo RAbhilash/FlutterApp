@@ -139,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 70),
                     Expanded(
+                      flex: 1,
                       child: GridView.count(
                         padding: const EdgeInsets.only(top: 80),
                         mainAxisSpacing: 30,
