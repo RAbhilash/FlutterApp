@@ -122,7 +122,7 @@ Widget item(int index, String subject, String asset, String subtext,
                 ),
                 Container(
                   width: 190,
-                  height: MediaQuery.of(context).size.height / 10,
+                  height: 100,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(24.0),
                     child: Image(
@@ -148,7 +148,7 @@ Widget tab(BuildContext context, String s, String url) {
       Padding(
         padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
         child: Container(
-          width: size.width / 3,
+          width: size.width / 3.5,
           child: Text(
             s,
             softWrap: true,

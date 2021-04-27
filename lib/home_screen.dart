@@ -4,6 +4,7 @@ import 'package:app/books.dart';
 import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:app/placment.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -154,24 +155,46 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: <Widget>[
                           //this is personal data
                           //card 1: personal
-                          Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 10,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/images/fang.png',
-                                  height: 100,
-                                ),
-                                SizedBox(height: 20),
-                                Text('Placement Material',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'))
-                              ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      animation = CurvedAnimation(
+                                          parent: animation,
+                                          curve: Curves.elasticInOut);
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return placement();
+                                    },
+                                  ));
+                            },
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              elevation: 10,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset(
+                                    'assets/images/personal.png',
+                                    height: 100,
+                                  ),
+                                  Text(
+                                    'Personal Data',
+                                    style: cardTextStyle,
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           InkWell(
