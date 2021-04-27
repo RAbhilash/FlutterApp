@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Regular",
         fontSize: 14,
-        color: Color.fromRGBO(63, 63, 63, 1));
+        color: Color.fromRGBO(63, 63, 63, 1)); //this is not really working
 
     return Scaffold(
       body: Container(
@@ -38,10 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: size.height * .5,
                       decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.black54,
+                              blurRadius: 40.0,
+                              offset: Offset(0.0, 0.75))
+                        ],
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(50),
-                          bottomRight: Radius.circular(50),
+                          bottomLeft: Radius.circular(80),
+                          bottomRight: Radius.circular(80),
                         ),
                         // image: DecorationImage(
                         //     fit: BoxFit.fill,
@@ -61,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)))),
+                                  BorderRadius.all(Radius.circular(30)))),
                       child: Container(
                         height: 200,
                         decoration: BoxDecoration(
@@ -80,63 +86,63 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.all(16.0),
                 child: Column(
                   children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        height: 84,
-                        // color: Colors.yellow,
-                        margin: EdgeInsets.only(bottom: 210),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            CircleAvatar(
-                              radius: 32,
-                              backgroundImage: NetworkImage(
-                                  'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
-                            ),
-                            SizedBox(
-                              width: 55,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                // Text(
-                                //   'SRM PRO',
-                                //   style: TextStyle(
-                                //       fontFamily: "Montserrat Medium",
-                                //       color: Colors.white,
-                                //       fontSize: 20),
-                                // ),
-                                DefaultTextStyle(
-                                  style: const TextStyle(
-                                      fontSize: 25, color: Colors.black),
-                                  child: AnimatedTextKit(
-                                    repeatForever: true,
-                                    pause: Duration(milliseconds: 1500),
-                                    animatedTexts: [
-                                      // TyperAnimatedText('SRM FOREVER'),
-                                      RotateAnimatedText('SRM'),
-                                      RotateAnimatedText('FOREVER'),
-                                    ],
-                                  ),
+                    Container(
+                      height: 84,
+                      // color: Colors.yellow,
+                      margin: EdgeInsets.only(bottom: 210),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 32,
+                            backgroundImage: NetworkImage(
+                                'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
+                          ),
+                          SizedBox(
+                            width: 55,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              // Text(
+                              //   'SRM PRO',
+                              //   style: TextStyle(
+                              //       fontFamily: "Montserrat Medium",
+                              //       color: Colors.white,
+                              //       fontSize: 20),
+                              // ),
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                    fontSize: 25, color: Colors.black),
+                                child: AnimatedTextKit(
+                                  repeatForever: true,
+                                  pause: Duration(milliseconds: 1500),
+                                  animatedTexts: [
+                                    // TyperAnimatedText('SRM FOREVER'),
+                                    RotateAnimatedText('SRM'),
+                                    RotateAnimatedText('FOREVER'),
+                                  ],
                                 ),
-                                // Text(
-                                //   '4101410141',
-                                //   style: TextStyle(
-                                //       fontSize: 14,
-                                //       color: Colors.redAccent,
-                                //       fontFamily: "Montserrat Regular"),
-                                // )
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                              // Text(
+                              //   '4101410141',
+                              //   style: TextStyle(
+                              //       fontSize: 14,
+                              //       color: Colors.redAccent,
+                              //       fontFamily: "Montserrat Regular"),
+                              // )
+                            ],
+                          )
+                        ],
                       ),
                     ),
-                    // SizedBox(
-                    //   height: 70,
-                    // ),
+                    Container(
+                      height: 60,
+                      // decoration: BoxDecoration(
+                      // color: Colors.black,
+                      // borderRadius: BorderRadius.circular(1000)),
+                    ),
                     Expanded(
                       flex: 1,
                       child: GridView.count(
@@ -150,19 +156,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 1: personal
                           Card(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
+                                borderRadius: BorderRadius.circular(40)),
                             elevation: 10,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/images/personal.png',
+                                  'assets/images/fang.png',
                                   height: 100,
                                 ),
-                                Text(
-                                  'Personal Data',
-                                  style: cardTextStyle,
-                                )
+                                SizedBox(height: 20),
+                                Text('Placement Material',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'cardTextStyle'))
                               ],
                             ),
                           ),
@@ -192,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 2:Books
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Container(
                                 decoration: BoxDecoration(
@@ -210,10 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 100,
                                     ),
                                     //SizedBox(height: 10),
-                                    Text(
-                                      'Books',
-                                      style: cardTextStyle,
-                                    )
+                                    SizedBox(height: 25),
+                                    Text('Books',
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'cardTextStyle'))
                                   ],
                                 ),
                               ),
@@ -229,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             child: Card(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -238,11 +248,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/calc.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'GPA Calculator',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('GPA Calculator',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
@@ -300,7 +311,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 4:course notes
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -309,11 +320,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/notes.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'Course Notes',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('Course Notes',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
