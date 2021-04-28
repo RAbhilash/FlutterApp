@@ -37,7 +37,7 @@ class _BooksState extends State<Books> {
               )),
               child: Container(
                 height: 200,
-                width: 200,
+                width: 200, 
                 decoration: BoxDecoration(
                     // color: Colors.blue,
                     image: DecorationImage(
