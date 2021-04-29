@@ -25,11 +25,13 @@ class booksyearone extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          backgroundColor: Colors.white24,
           appBar: AppBar(
             title: Text('First Year'),
+            backgroundColor: Colors.pink[100],
             bottom: TabBar(
-              indicatorColor: Colors.purple[400],
-              labelColor: Colors.amberAccent,
+              indicatorColor: Colors.black,
+              labelColor: Colors.black,
               unselectedLabelColor: Colors.white,
               tabs: <Widget>[
                 Tab(
@@ -89,13 +91,15 @@ Widget item(int index, String subject, String asset, String subtext,
     padding: const EdgeInsets.all(16.0),
     child: Container(
       decoration: BoxDecoration(
+          color: Colors.blue[900],
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: FittedBox(
         child: Material(
             color: Colors.white,
             elevation: 05.0,
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40), bottomLeft: Radius.circular(40)),
             shadowColor: Color(0x802196F3),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
