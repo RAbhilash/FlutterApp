@@ -14,9 +14,9 @@ class _BooksState extends State<Books> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[900],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.pink[50],
+        backgroundColor: Colors.red[300],
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
@@ -37,7 +37,7 @@ class _BooksState extends State<Books> {
               )),
               child: Container(
                 height: 200,
-                width: 200, 
+                width: 200,
                 decoration: BoxDecoration(
                     // color: Colors.blue,
                     image: DecorationImage(

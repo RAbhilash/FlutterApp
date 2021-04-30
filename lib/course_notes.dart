@@ -11,7 +11,7 @@ class notes extends StatelessWidget {
       appBar: AppBar(
         title: Text('Course Notes'),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.red[300],
       ),
       body: Center(
         child: Column(

@@ -183,18 +183,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'assets/images/fang.png',
-                                    height: 100,
+                                  Expanded(
+                                    child: Image.asset(
+                                      'assets/images/fang.png',
+                                    ),
                                   ),
-                                  Text(
-                                    'Placement Material',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'),
+                                  Expanded(
+                                    child: Text(
+                                      'Placement Material',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'),
+                                    ),
                                   )
                                 ],
                               ),

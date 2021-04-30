@@ -1,3 +1,4 @@
+import 'package:app/fontlib/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -141,7 +142,10 @@ Widget tab(BuildContext context, String s, String url) {
         padding: EdgeInsets.only(left: 8),
         child: ElevatedButton.icon(
           label: Text('View'),
-          icon: Icon(Icons.insert_drive_file),
+          icon: Icon(
+            MyFlutterApp.drive,
+            size: 15,
+          ),
           onPressed: () {
             launchurl(url);
           },

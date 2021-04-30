@@ -27,4 +27,6 @@ class MyFlutterApp {
       IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData docs =
       IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData drive =
+      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
