@@ -173,7 +173,7 @@ class _GpaState extends State<Gpa> {
                       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(12)),
                         height: MediaQuery.of(context).size.height / 15,
                         width: MediaQuery.of(context).size.width / 1.1,
@@ -220,7 +220,7 @@ class _GpaState extends State<Gpa> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white38,
+                  color: Colors.transparent,
                   boxShadow: [
                     BoxShadow(
                         blurRadius: 20, spreadRadius: 18, color: Colors.black12)
@@ -236,7 +236,7 @@ class _GpaState extends State<Gpa> {
                         child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                             child: Card(
-                                color: Colors.white70,
+                                color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 ),
@@ -246,30 +246,25 @@ class _GpaState extends State<Gpa> {
                                     textAlign: TextAlign.center,
                                   ),
                                 )))),
-                    ClipRRect(
-                        child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-                            child: Card(
-                                color: Colors.white70,
-                                child: DrpBt(1),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                )))),
-                    ClipRRect(
-                        child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-                            child: Card(
-                                color: Colors.white70,
-                                child: DrpBt1(1),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                )))),
+                    Card(
+                        color: Colors.white,
+                        child: DrpBt(1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                        )),
+
+                    Card(
+                        color: Colors.white,
+                        child: DrpBt1(1),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                        )),
 
                     /**from here i will be repeating all the above widget yooo */
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -278,21 +273,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(2)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(2)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -301,21 +296,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(3)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(3)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -324,21 +319,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(4)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(4)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -347,21 +342,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(5)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(5)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -370,21 +365,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(6)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(6)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -393,21 +388,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(7)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(7)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -416,21 +411,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(8)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(8)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -439,21 +434,21 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(9)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(9)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: Center(
                           child: Text(
@@ -462,15 +457,15 @@ class _GpaState extends State<Gpa> {
                           ),
                         )),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt(10)),
                     Card(
-                        color: Colors.white70,
+                        color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         child: DrpBt1(10)),
                     // Card(
@@ -482,7 +477,7 @@ class _GpaState extends State<Gpa> {
                     // Card(child: DrpBt1()),
                     // Card(
                     //     child: Text(
-                    //   "12",
+                    //   "9",
                     //   textAlign: TextAlign.center,
                     // )),
                     // Card(child: DrpBt()),
@@ -507,7 +502,7 @@ class _GpaState extends State<Gpa> {
                           child: Container(
                         height: 50,
                         decoration: BoxDecoration(
-                            // color: Colors.white12,
+                            // color: Colors.white9,
                             border: Border.all(width: .1),
                             borderRadius: BorderRadius.circular(25)),
                         child: RaisedButton(
@@ -561,7 +556,7 @@ class _GpaState extends State<Gpa> {
               ),
               Text(
                 "Long Press for reset",
-                style: TextStyle(fontSize: 12, color: Colors.white70),
+                style: TextStyle(fontSize: 12, color: Colors.white),
               )
             ]),
           ],
