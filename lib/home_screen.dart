@@ -70,8 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)))),
                       child: Container(
-                        height: 200,
+                        height: size.height * .3,
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
                           image: DecorationImage(
                               fit: BoxFit.fitWidth,
                               image: AssetImage("assets/images/gif1.gif")),
@@ -88,7 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 84,
+                      height: size.height * .13,
+
                       // color: Colors.yellow,
                       margin: EdgeInsets.only(bottom: 210),
                       child: Row(
@@ -99,33 +101,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             backgroundImage: NetworkImage(
                                 'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
                           ),
-                          SizedBox(
-                            width: 55,
-                          ),
+                          // SizedBox(
+                          //   width: 55,
+                          // ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              // Text(
-                              //   'SRM PRO',
-                              //   style: TextStyle(
-                              //       fontFamily: "Montserrat Medium",
-                              //       color: Colors.white,
-                              //       fontSize: 20),
-                              // ),
                               DefaultTextStyle(
                                 style: const TextStyle(
                                     fontSize: 21, color: Colors.black),
-                                child: AnimatedTextKit(
-                                  repeatForever: true,
-                                  pause: Duration(milliseconds: 1500),
-                                  animatedTexts: [
-                                    // TyperAnimatedText('SRM FOREVER'),
-                                    RotateAnimatedText('SRM'),
-                                    RotateAnimatedText('FOREVER'),
-                                  ],
-                                ),
+                                child: Text("   App Name"),
                               ),
+                              Text("damm"),
                               // Text(
                               //   '4101410141',
                               //   style: TextStyle(
@@ -139,7 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      height: 60,
+                      height: size.height * .01, // to make this responsive
+                      color: Colors.black,
                       // decoration: BoxDecoration(
                       // color: Colors.black,
                       // borderRadius: BorderRadius.circular(1000)),
@@ -187,7 +176,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: <Widget>[
                                   Image.asset('assets/images/fang.png',
                                       alignment: Alignment.center,
-                                      height: 100,
                                       fit: BoxFit.fill),
                                   Text(
                                     'Placement Material',
@@ -239,17 +227,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Image.asset(
-                                      'assets/images/books.png', //add img here
-                                      height: 100,
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                            'assets/images/books.png', //add img here
+                                            height: 100),
+                                      ),
                                     ),
                                     //SizedBox(height: 10),
-                                    SizedBox(height: 25),
-                                    Text('Books',
-                                        style: TextStyle(
-                                            // fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'cardTextStyle'))
+                                    // SizedBox(height: 20),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('Books',
+                                          style: TextStyle(
+                                              // fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'cardTextStyle')),
+                                    )
                                   ],
                                 ),
                               ),
