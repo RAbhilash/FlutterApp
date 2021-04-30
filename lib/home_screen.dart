@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // ),
                               DefaultTextStyle(
                                 style: const TextStyle(
-                                    fontSize: 25, color: Colors.black),
+                                    fontSize: 21, color: Colors.black),
                                 child: AnimatedTextKit(
                                   repeatForever: true,
                                   pause: Duration(milliseconds: 1500),
@@ -185,19 +185,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  Expanded(
-                                    child: Image.asset(
-                                      'assets/images/fang.png',
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Text(
-                                      'Placement Material',
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'cardTextStyle'),
-                                    ),
+                                  Image.asset('assets/images/fang.png',
+                                      alignment: Alignment.center,
+                                      height: 100,
+                                      fit: BoxFit.fill),
+                                  Text(
+                                    'Placement Material',
+                                    style: TextStyle(
+                                        // fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'cardTextStyle'),
                                   )
                                 ],
                               ),
@@ -250,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     SizedBox(height: 25),
                                     Text('Books',
                                         style: TextStyle(
-                                            fontSize: 20,
+                                            // fontSize: 20,
                                             fontWeight: FontWeight.bold,
                                             fontFamily: 'cardTextStyle'))
                                   ],
@@ -280,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   SizedBox(height: 30),
                                   Text('GPA Calculator',
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          // fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'cardTextStyle'))
                                 ],
@@ -352,7 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   SizedBox(height: 30),
                                   Text('Course Notes',
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          // fontSize: 20,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'cardTextStyle'))
                                 ],
