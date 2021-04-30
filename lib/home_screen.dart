@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
                                   Image.asset('assets/images/fang.png',
                                       alignment: Alignment.center,

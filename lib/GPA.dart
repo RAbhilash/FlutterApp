@@ -133,7 +133,7 @@ class _GpaState extends State<Gpa> {
         // bottomNavigationBar: Container(height: 60, child: Text("hiii")
         // decoration: ,
         appBar: AppBar(
-          backgroundColor: Colors.pink[100],
+          backgroundColor: Colors.red[200],
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
