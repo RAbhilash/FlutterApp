@@ -94,24 +94,32 @@ class placement extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverPadding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 sliver: SliverAppBar(
+                  iconTheme: IconThemeData(
+                    color: Colors.black,
+                  ),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)),
+                      borderRadius: BorderRadius.circular(50)),
                   backgroundColor: Colors.white,
-                  expandedHeight: 200.0,
-                  floating: false,
+                  expandedHeight: 250.0,
+                  floating: true,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                       centerTitle: true,
-                      title: Text("Collapsing Toolbar",
+                      title: Text("Placement Material",
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                          )),
-                      background: Image.asset(
-                        "assets/images/fang.png",
-                        fit: BoxFit.fitHeight,
+                              color: Colors.black,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold)),
+                      background: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Container(
+                          child: Image.asset(
+                            "assets/images/fang.png",
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
                       )),
                 ),
               ),

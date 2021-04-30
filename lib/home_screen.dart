@@ -50,9 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottomLeft: Radius.circular(80),
                           bottomRight: Radius.circular(80),
                         ),
-                        // image: DecorationImage(
-                        //     fit: BoxFit.fill,
-                        //     image: AssetImage("assets/images/top_header.jpg"))
                       ),
                     )
                   ],
@@ -89,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: size.height * .13,
+                      height: size.height * .17,
 
                       // color: Colors.yellow,
                       margin: EdgeInsets.only(bottom: 210),
@@ -127,8 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      height: size.height * .01, // to make this responsive
-                      color: Colors.black,
+                      height: size.height * .05, // to make this responsive
                       // decoration: BoxDecoration(
                       // color: Colors.black,
                       // borderRadius: BorderRadius.circular(1000)),
@@ -136,9 +132,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       flex: 1,
                       child: GridView.count(
-                        padding: const EdgeInsets.only(top: 80),
-                        mainAxisSpacing: 30,
-                        crossAxisSpacing: 20,
+                        padding: const EdgeInsets.only(top: 40),
+                        mainAxisSpacing: 18,
+                        crossAxisSpacing: 13,
                         primary: false,
                         crossAxisCount: 2,
                         children: <Widget>[
