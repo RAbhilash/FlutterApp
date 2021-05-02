@@ -22,10 +22,10 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 3,
+      seconds: 1,
       navigateAfterSeconds: HomeScreen(),
       image: Image.asset("assets/images/splash1.jpg"),
-      photoSize: 250,
+      photoSize: MediaQuery.of(context).size.width * .3,
       backgroundColor: Colors.red[300],
       loaderColor: Colors.white,
     );

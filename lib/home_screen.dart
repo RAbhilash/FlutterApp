@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .5,
+                      height: size.height * .45,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -57,10 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(children: [
                   // SizedBox(height: size.height * .099),
                   SizedBox(
-                    height: 25,
+                    height: 2,
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 95, 20, 2),
+                    padding: const EdgeInsets.fromLTRB(20, 55, 20, 2),
                     child: ClipPath(
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
@@ -82,14 +82,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SafeArea(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.only(top: 15, right: 15, left: 15),
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: size.height * .17,
+                      height: size.height * .2,
 
                       // color: Colors.yellow,
-                      margin: EdgeInsets.only(bottom: 210),
+                      margin: EdgeInsets.only(bottom: size.height * .25),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -111,13 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text("   App Name"),
                               ),
                               Text("damm"),
-                              // Text(
-                              //   '4101410141',
-                              //   style: TextStyle(
-                              //       fontSize: 14,
-                              //       color: Colors.redAccent,
-                              //       fontFamily: "Montserrat Regular"),
-                              // )
                             ],
                           )
                         ],
@@ -129,9 +122,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       flex: 1,
                       child: GridView.count(
-                        padding: const EdgeInsets.only(top: 40),
-                        mainAxisSpacing: 18,
-                        crossAxisSpacing: 13,
+                        physics: NeverScrollableScrollPhysics(),
+                        padding: const EdgeInsets.only(bottom: 0),
+                        mainAxisSpacing: 12,
+                        crossAxisSpacing: 12,
                         primary: false,
                         crossAxisCount: 2,
                         children: <Widget>[
