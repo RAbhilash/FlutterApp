@@ -123,12 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: size.height * .05, // to make this responsive
-                      // decoration: BoxDecoration(
-                      // color: Colors.black,
-                      // borderRadius: BorderRadius.circular(1000)),
-                    ),
+                    // Container(
+                    //   height: size.height * .05, // to make this responsive
+                    // ),
                     Expanded(
                       flex: 1,
                       child: GridView.count(
@@ -139,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisCount: 2,
                         children: <Widget>[
                           //this is personal data
-                          //card 1: personal
+                          //card 1: personal2
                           InkWell(
                             onTap: () {
                               Navigator.push(
