@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .3,
+                      height: size.height * .4,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -57,10 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(children: [
                   // SizedBox(height: size.height * .099),
                   SizedBox(
-                    height: 2,
+                    height: size.height * .087,
                   ),
+
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 55, 20, 2),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 2),
                     child: ClipPath(
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
@@ -123,10 +124,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Expanded(
                       flex: 1,
                       child: GridView.count(
-                        physics: NeverScrollableScrollPhysics(),
+                        // physics: NeverScrollableScrollPhysics(),
                         // padding: const EdgeInsets.only(bottom: 20),
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 1,
+                        crossAxisSpacing: 5,
                         primary: true,
                         crossAxisCount: 2,
                         children: <Widget>[
@@ -163,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
                                   Expanded(
-                                    flex: 3,
+                                    flex: 2,
                                     child: Padding(
                                       padding: const EdgeInsets.all(15.0),
                                       child: Image.asset(
@@ -262,21 +263,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Expanded(
-                                      flex: 2,
+                                  Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
                                       child: Image.asset(
                                         'assets/images/calc.png',
-                                        height: 100,
                                       ),
                                     ),
                                   ),
                                   Expanded(
+                                    flex: 1,
                                     child: Text('GPA Calculator',
                                         style: TextStyle(
-                                            // fontSize: 20,
                                             fontWeight: FontWeight.bold,
+                                            // fontSize: 20,
                                             fontFamily: 'cardTextStyle')),
                                   )
                                 ],
@@ -343,16 +344,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: <Widget>[
                                   Expanded(
                                     flex: 2,
-                                    child: Image.asset(
-                                      'assets/images/notes.png',
-                                      height: 100,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/images/notes.png',
+                                        // height: 100,
+                                      ),
                                     ),
                                   ),
-                                  Text('Course Notes',
-                                      style: TextStyle(
-                                          // fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'cardTextStyle'))
+                                  Expanded(
+                                    child: Text('Course Notes',
+                                        style: TextStyle(
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'cardTextStyle')),
+                                  )
                                 ],
                               ),
                             ),
