@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .45,
+                      height: size.height * .3,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -82,14 +82,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SafeArea(
               child: Padding(
-                padding: EdgeInsets.only(top: 15, right: 15, left: 15),
+                padding:
+                    EdgeInsets.only(top: 15, right: 15, left: 15, bottom: 3),
                 child: Column(
                   children: <Widget>[
                     Container(
                       height: size.height * .2,
 
                       // color: Colors.yellow,
-                      margin: EdgeInsets.only(bottom: size.height * .25),
+                      margin: EdgeInsets.only(bottom: size.height * .24),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -123,10 +124,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 1,
                       child: GridView.count(
                         physics: NeverScrollableScrollPhysics(),
-                        padding: const EdgeInsets.only(bottom: 0),
-                        mainAxisSpacing: 12,
-                        crossAxisSpacing: 12,
-                        primary: false,
+                        // padding: const EdgeInsets.only(bottom: 20),
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        primary: true,
                         crossAxisCount: 2,
                         children: <Widget>[
                           //this is personal data
@@ -161,15 +162,24 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  Image.asset('assets/images/fang.png',
-                                      alignment: Alignment.center,
-                                      fit: BoxFit.fill),
-                                  Text(
-                                    'Placement Material',
-                                    style: TextStyle(
-                                        // fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'),
+                                  Expanded(
+                                    flex: 3,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset(
+                                          'assets/images/fang1.png',
+                                          alignment: Alignment.center,
+                                          fit: BoxFit.fill),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      'Placement Material',
+                                      style: TextStyle(
+                                          // fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'),
+                                    ),
                                   )
                                 ],
                               ),
@@ -252,16 +262,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'assets/images/calc.png',
-                                    height: 100,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Expanded(
+                                      flex: 2,
+                                      child: Image.asset(
+                                        'assets/images/calc.png',
+                                        height: 100,
+                                      ),
+                                    ),
                                   ),
-                                  SizedBox(height: 30),
-                                  Text('GPA Calculator',
-                                      style: TextStyle(
-                                          // fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'cardTextStyle'))
+                                  Expanded(
+                                    child: Text('GPA Calculator',
+                                        style: TextStyle(
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'cardTextStyle')),
+                                  )
                                 ],
                               ),
                             ),
@@ -324,11 +341,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'assets/images/notes.png',
-                                    height: 100,
+                                  Expanded(
+                                    flex: 2,
+                                    child: Image.asset(
+                                      'assets/images/notes.png',
+                                      height: 100,
+                                    ),
                                   ),
-                                  SizedBox(height: 30),
                                   Text('Course Notes',
                                       style: TextStyle(
                                           // fontSize: 20,
