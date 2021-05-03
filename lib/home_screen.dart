@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .5,
+                      height: size.height * .4,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -57,10 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(children: [
                   // SizedBox(height: size.height * .099),
                   SizedBox(
-                    height: 25,
+                    height: size.height * .087,
                   ),
+
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 95, 20, 2),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 2),
                     child: ClipPath(
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
@@ -71,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
                           image: DecorationImage(
+                              fit: BoxFit.fitWidth,
                               image: AssetImage("assets/images/gif1.gif")),
                         ),
                       ),
@@ -80,105 +82,102 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SafeArea(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: size.height * .17,
+              child: Padding(
+                padding:
+                    EdgeInsets.only(top: 15, right: 15, left: 15, bottom: 3),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: size.height * .2,
 
-                    // color: Colors.yellow,
-                    margin: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).size.height * .26),
-                    child: Row(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage(
-                              'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
-                        ),
-                        // SizedBox(
-                        //   width: 55,
-                        // ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            DefaultTextStyle(
-                              style: const TextStyle(
-                                  fontSize: 21, color: Colors.black),
-                              child: Text("App Name"),
-                            ),
-                            Text("damm"),
-                            // Text(
-                            //   '4101410141',
-                            //   style: TextStyle(
-                            //       fontSize: 14,
-                            //       color: Colors.redAccent,
-                            //       fontFamily: "Montserrat Regular"),
-                            // )
-                          ],
-                        )
-                      ],
+                      // color: Colors.yellow,
+                      margin: EdgeInsets.only(bottom: size.height * .24),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 32,
+                            backgroundImage: NetworkImage(
+                                'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
+                          ),
+                          // SizedBox(
+                          //   width: 55,
+                          // ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                    fontSize: 21, color: Colors.black),
+                                child: Text("   App Name"),
+                              ),
+                              Text("damm"),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  // Container(
-                  //   height: size.height * .05, // to make this responsive
-                  // ),
-                  Expanded(
-                    flex: 1,
-                    child: GridView.count(
-                      padding: const EdgeInsets.only(
-                          top: 40, left: 10, right: 10, bottom: 10),
-                      mainAxisSpacing: 18,
-                      crossAxisSpacing: 13,
-                      primary: false,
-                      crossAxisCount: 2,
-                      children: <Widget>[
-                        //this is personal data
-                        //card 1: personal2
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration: Duration(seconds: 1),
-                                  transitionsBuilder: (context, animation,
-                                      animationTime, child) {
-                                    animation = CurvedAnimation(
-                                        parent: animation,
-                                        curve: Curves.elasticInOut);
-                                    return ScaleTransition(
-                                      alignment: Alignment.center,
-                                      scale: animation,
-                                      child: child,
-                                    );
-                                  },
-                                  pageBuilder:
-                                      (context, animation, animationTime) {
-                                    return placement();
-                                  },
-                                ));
-                          },
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 10,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                    // Container(
+                    //   height: size.height * .05, // to make this responsive
+                    // ),
+                    Expanded(
+                      flex: 1,
+                      child: GridView.count(
+                        // physics: NeverScrollableScrollPhysics(),
+                        // padding: const EdgeInsets.only(bottom: 20),
+                        mainAxisSpacing: 1,
+                        crossAxisSpacing: 5,
+                        primary: true,
+                        crossAxisCount: 2,
+                        children: <Widget>[
+                          //this is personal data
+                          //card 1: personal2
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      animation = CurvedAnimation(
+                                          parent: animation,
+                                          curve: Curves.elasticInOut);
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return placement();
+                                    },
+                                  ));
+                            },
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40)),
+                              elevation: 10,
                               child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
                                   Expanded(
-                                    flex: 6,
-                                    child: Image.asset(
-                                      'assets/images/fang.png',
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset(
+                                          'assets/images/fang1.png',
+                                          alignment: Alignment.center,
+                                          fit: BoxFit.fill),
                                     ),
                                   ),
                                   Expanded(
                                     child: Text(
                                       'Placement Material',
                                       style: TextStyle(
-                                          // fontSize: 15,
+                                          // fontSize: 18,
                                           fontWeight: FontWeight.bold,
                                           fontFamily: 'cardTextStyle'),
                                     ),
@@ -187,59 +186,174 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration: Duration(seconds: 1),
-                                  transitionsBuilder: (context, animation,
-                                      animationTime, child) {
-                                    animation = CurvedAnimation(
-                                        parent: animation,
-                                        curve: Curves.elasticInOut);
-                                    return ScaleTransition(
-                                      alignment: Alignment.center,
-                                      scale: animation,
-                                      child: child,
-                                    );
-                                  },
-                                  pageBuilder:
-                                      (context, animation, animationTime) {
-                                    return Books();
-                                  },
-                                ));
-                          },
-                          child: Card(
-                            //card 2:Books
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 10,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  // image: DecorationImage(
-                                  //     fit: BoxFit.fill,
-                                  //     alignment: Alignment.topCenter,
-                                  //     // image: AssetImage('assets/images/g1.jpg')
-                                  //     ),
-                                  ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      animation = CurvedAnimation(
+                                          parent: animation,
+                                          curve: Curves.elasticInOut);
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return Books();
+                                    },
+                                  ));
+                            },
+                            child: Card(
+                              //card 2:Books
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40)),
+                              elevation: 10,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    // image: DecorationImage(
+                                    //     fit: BoxFit.fill,
+                                    //     alignment: Alignment.topCenter,
+                                    //     // image: AssetImage('assets/images/g1.jpg')
+                                    //     ),
+                                    ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                            'assets/images/books.png', //add img here
+                                            height: 100),
+                                      ),
+                                    ),
+                                    //SizedBox(height: 10),
+                                    // SizedBox(height: 20),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('Books',
+                                          style: TextStyle(
+                                              // fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'cardTextStyle')),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          //card 3:gpa
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Gpa()));
+                            },
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40)),
+                              elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Image.asset(
+                                        'assets/images/calc.png',
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Text('GPA Calculator',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            // fontSize: 20,
+                                            fontFamily: 'cardTextStyle')),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          // InkWell(
+                          //   borderRadius: BorderRadius.circular(16),
+                          //   splashColor: Colors.greenAccent[210],
+                          //   child: Card(
+                          //     // color: Colors.transparent,
+                          //     shape: RoundedRectangleBorder(
+                          //         borderRadius: BorderRadius.circular(20)),
+                          //     elevation: 20,
+                          //     child: Column(
+                          //       mainAxisAlignment: MainAxisAlignment.center,
+                          //       children: <Widget>[
+                          //         SvgPicture.network(
+                          //           'https://image.flaticon.com/icons/svg/1904/1904235.svg',
+                          //           height: 128,
+                          //         ),
+                          //         Text(
+                          //           'Course Booking',
+                          //           style: cardTextStyle,
+                          //         )
+                          //       ],
+                          //     ),
+                          //   ),
+                          //   onTap: () {
+                          //     print("Tapped");
+                          //   },
+                          // ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      animation = CurvedAnimation(
+                                          parent: animation,
+                                          curve: Curves.elasticInOut);
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return notes();
+                                    },
+                                  ));
+                            },
+                            child: Card(
+                              //card 4:course notes
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40)),
+                              elevation: 10,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 2,
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Image.asset(
-                                          'assets/images/books.png', //add img here
-                                          height: 100),
+                                        'assets/images/notes.png',
+                                        // height: 100,
+                                      ),
                                     ),
                                   ),
-                                  //SizedBox(height: 10),
-                                  // SizedBox(height: 20),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Books',
+                                  Expanded(
+                                    child: Text('Course Notes',
                                         style: TextStyle(
                                             // fontSize: 20,
                                             fontWeight: FontWeight.bold,
@@ -249,110 +363,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                        ),
-                        //card 3:gpa
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Gpa()));
-                          },
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 10,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/images/calc.png',
-                                  height: 100,
-                                ),
-                                SizedBox(height: 30),
-                                Text('GPA Calculator',
-                                    style: TextStyle(
-                                        // fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'))
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        // InkWell(
-                        //   borderRadius: BorderRadius.circular(16),
-                        //   splashColor: Colors.greenAccent[210],
-                        //   child: Card(
-                        //     // color: Colors.transparent,
-                        //     shape: RoundedRectangleBorder(
-                        //         borderRadius: BorderRadius.circular(20)),
-                        //     elevation: 20,
-                        //     child: Column(
-                        //       mainAxisAlignment: MainAxisAlignment.center,
-                        //       children: <Widget>[
-                        //         SvgPicture.network(
-                        //           'https://image.flaticon.com/icons/svg/1904/1904235.svg',
-                        //           height: 128,
-                        //         ),
-                        //         Text(
-                        //           'Course Booking',
-                        //           style: cardTextStyle,
-                        //         )
-                        //       ],
-                        //     ),
-                        //   ),
-                        //   onTap: () {
-                        //     print("Tapped");
-                        //   },
-                        // ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration: Duration(seconds: 1),
-                                  transitionsBuilder: (context, animation,
-                                      animationTime, child) {
-                                    animation = CurvedAnimation(
-                                        parent: animation,
-                                        curve: Curves.elasticInOut);
-                                    return ScaleTransition(
-                                      alignment: Alignment.center,
-                                      scale: animation,
-                                      child: child,
-                                    );
-                                  },
-                                  pageBuilder:
-                                      (context, animation, animationTime) {
-                                    return notes();
-                                  },
-                                ));
-                          },
-                          child: Card(
-                            //card 4:course notes
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            elevation: 10,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/images/notes.png',
-                                  height: 100,
-                                ),
-                                SizedBox(height: 30),
-                                Text('Course Notes',
-                                    style: TextStyle(
-                                        // fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'))
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
