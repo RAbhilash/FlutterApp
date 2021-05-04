@@ -28,6 +28,7 @@ dependencies:
   backdrop: ^0.5.3
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.19.3
+  responsive_flutter: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,8 @@ flutter:
     - family: MyFlutterApp
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf
+        - asset: assets/fonts/AlluraRegular.ttf
+      
   assets:
     - assets/images/
   # To add assets to your application, add an assets section, like this:
