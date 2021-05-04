@@ -48,7 +48,6 @@ flutter:
     - family: MyFlutterApp
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf
-        - asset: assets/fonts/AlluraRegular.ttf
       
   assets:
     - assets/images/
