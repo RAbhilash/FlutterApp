@@ -5,6 +5,7 @@ import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
+import 'package:responsive_flutter/responsive_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -88,6 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: <Widget>[
                     Container(
+                      padding: EdgeInsets.only(
+                          top: 0, right: 0, left: 0, bottom: size.height * .1),
                       height: size.height * .2,
 
                       // color: Colors.yellow,
@@ -95,11 +98,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          CircleAvatar(
-                            radius: 32,
-                            backgroundImage: NetworkImage(
-                                'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
-                          ),
+                          Container(
+                              height: size.height * .2,
+                              width: size.width * .2,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                border: Border.all(color: Colors.black),
+                                image: new DecorationImage(
+                                  image: AssetImage('assets/images/logo.png'),
+                                ),
+                                shape: BoxShape.circle,
+                              )),
+                          //                           child: CircleAvatar(
+                          //   radius: 32,
+                          //   backgroundImage: Image.asset(
+                          //       'assets/images/fang1.png'),
+                          // ),
+
                           // SizedBox(
                           //   width: 55,
                           // ),
@@ -108,11 +123,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               DefaultTextStyle(
-                                style: const TextStyle(
-                                    fontSize: 21, color: Colors.black),
-                                child: Text("   App Name"),
+                                style: TextStyle(
+                                    fontSize: ResponsiveFlutter.of(context)
+                                        .fontSize(3),
+                                    color: Colors.black),
+                                child: Text(
+                                  "   SRM MATE",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'MyFlutterApp.AlluraRegular'),
+                                ),
                               ),
-                              Text("damm"),
                             ],
                           )
                         ],
