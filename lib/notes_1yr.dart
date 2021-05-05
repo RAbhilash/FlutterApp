@@ -1,6 +1,8 @@
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:responsive_screen/responsive_screen.dart';
+import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 
 class detail {
   String subject, asset, url;
@@ -54,6 +56,7 @@ class yearone extends StatelessWidget {
             backgroundColor: Colors.blue,
             title: Text('First Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: <Widget>[
                 Tab(
                   text: 'Sem 1',
@@ -83,6 +86,8 @@ class yearone extends StatelessWidget {
 
 Widget item(
     BuildContext context, int index, String subject, String url, String asset) {
+  final wp = Screen(context).wp; //specify wp
+  final hp = Screen(context).hp;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -93,21 +98,29 @@ Widget item(
             borderRadius: BorderRadius.circular(24.0),
             shadowColor: Color(0x802196F3),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0),
-                    child: tab(context, subject, url),
+                    child: tab(
+                      context,
+                      subject,
+                      url,
+                      wp,
+                      hp,
+                    ),
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  width: wp(25),
+                  height: hp(21),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(24),
+                        topRight: Radius.circular(24)),
                     child: Image(
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fill,
                       alignment: Alignment.topRight,
                       image: AssetImage(asset),
                     ),
@@ -120,32 +133,38 @@ Widget item(
   );
 }
 
-Widget tab(BuildContext context, String s, String url) {
+Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   var size = MediaQuery.of(context).size;
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
+        padding: EdgeInsets.fromLTRB(8, 0, 10, 10),
         child: Container(
-          width: size.width / 3,
-          child: Text(
+          height: hp(5),
+          width: wp(75),
+          child: TextOneLine(
             s,
-            softWrap: true,
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+            overflow: TextOverflow.fade,
+            style: TextStyle(
+              fontSize: hp(5),
+            ),
           ),
         ),
       ),
       Padding(
         padding: EdgeInsets.only(left: 8),
-        child: ElevatedButton.icon(
-          label: Text('View'),
-          icon: Icon(MyFlutterApp.drive, size: 15),
-          onPressed: () {
-            launchurl(url);
-          },
+        child: SizedBox(
+          height: hp(5),
+          width: wp(20),
+          child: ElevatedButton.icon(
+            label: Text('View'),
+            icon: Icon(MyFlutterApp.drive, size: 15),
+            onPressed: () {
+              launchurl(url);
+            },
+          ),
         ),
       ),
     ],
