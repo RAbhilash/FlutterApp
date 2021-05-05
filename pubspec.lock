@@ -177,7 +177,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-<<<<<<< HEAD
   responsive_screen:
     dependency: "direct main"
     description:
@@ -185,15 +184,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-=======
-  responsive_flutter:
-    dependency: "direct main"
-    description:
-      name: responsive_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.4"
->>>>>>> 52a33b5f0631b556be600cec51b1d448c1668e8b
   sky_engine:
     dependency: transitive
     description: flutter
