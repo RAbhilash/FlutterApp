@@ -5,7 +5,7 @@ import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
-import 'package:responsive_flutter/responsive_flutter.dart';
+import 'package:responsive_screen/responsive_screen.dart';
 import 'package:foldable_sidebar/foldable_sidebar.dart';
 import 'package:swipedetector/swipedetector.dart';
 
@@ -119,10 +119,8 @@ class _FirstScreenState extends State<FirstScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             DefaultTextStyle(
-                              style: TextStyle(
-                                  fontSize:
-                                      ResponsiveFlutter.of(context).fontSize(3),
-                                  color: Colors.black),
+                              style:
+                                  TextStyle(fontSize: 3, color: Colors.black),
                               child: Text(
                                 "   SRM MATE",
                                 style: TextStyle(
@@ -490,6 +488,10 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             }),
         body: SwipeDetector(
+          swipeConfiguration: SwipeConfiguration(
+            //horizontalSwipeMinVelocity: 50,
+            horizontalSwipeMinDisplacement: 20,
+          ),
           onSwipeRight: () {
             setState(() {
               drawerStatus = FSBStatus.FSB_OPEN;
