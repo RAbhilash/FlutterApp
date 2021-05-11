@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HawkFabMenuItem(
                       label: 'ERP',
                       ontap: () {
-                        launchurl("https://evarsity.srmist.edu.in/srmsip/"),
+                        launchurl("https://evarsity.srmist.edu.in/srmsip/");
                       },
                       icon: Icon(Icons.comment),
                       labelColor: Colors.white,
