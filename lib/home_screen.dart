@@ -18,7 +18,9 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
+<<<<<<< HEAD
 
+launchurl(url) async{
 class _HomeScreenState extends State<HomeScreen> {
   //main home screen
 
