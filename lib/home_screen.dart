@@ -466,21 +466,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // to get size
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-        ],
-      ),
-      backgroundColor: Colors.red[300],
-      body: Stack(
+    return Material(
+      color: Colors.red[300],
+      child: Stack(
         fit: StackFit.loose,
         children: <Widget>[
           Stack(
