@@ -25,7 +25,7 @@ class yearone extends StatefulWidget {
         "Calculus and Linear Algebra",
         "https://m.media-amazon.com/images/I/31ymIAQWgjL.jpg",
         "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
-    data1.add(detail("BEEE", "http://techbooksyard.com/doc-images/3635.png",
+    data1.add(detail("BEEE", "https://techbooksyard.com/doc-images/3635.png",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail(
         "English",
