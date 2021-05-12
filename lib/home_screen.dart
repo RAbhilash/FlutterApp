@@ -10,6 +10,8 @@ import 'package:responsive_screen/responsive_screen.dart';
 import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 import 'package:app/aboutus.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:flutter_beautiful_popup/main.dart';
 // import 'package:foldable_sidebar/foldable_sidebar.dart';
 // import 'package:swipedetector/swipedetector.dart';
@@ -18,9 +20,24 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-<<<<<<< HEAD
 
-launchurl(url) async{
+launchurl(url) async {
+  if (await canLaunch(url))
+    await launch(url);
+  else
+    throw 'Error launching url';
+}
+
+_sendMail() async {
+  // Android and iOS
+  const uri = 'mailto:sample345111@gmail.com'; //?&body=Hello%20World';
+  if (await canLaunch(uri)) {
+    await launch(uri);
+  } else {
+    throw 'Could not launch $uri';
+  }
+}
+
 class _HomeScreenState extends State<HomeScreen> {
   //main home screen
 
@@ -77,6 +94,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         Scaffold.of(context).showSnackBar(
                           SnackBar(content: Text('ERP')),
                         );
+                      },
+                      icon: Icon(Icons.comment),
+                      labelColor: Colors.white,
+                      labelBackgroundColor: Colors.blue,
+                    ),
+                    HawkFabMenuItem(
+                      label: 'Feedback',
+                      ontap: () {
+                        _sendMail();
                       },
                       icon: Icon(Icons.comment),
                       labelColor: Colors.white,
@@ -183,6 +209,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 'assets/images/logo.png'),
                                           ),
                                           shape: BoxShape.circle,
+                                          boxShadow: <BoxShadow>[
+                                            BoxShadow(
+                                                color: Colors.black,
+                                                offset: Offset(1.0, 1.0),
+                                                blurRadius: 10)
+                                          ],
                                         )),
                                     //                           child: CircleAvatar(
                                     //   radius: 32,
