@@ -183,15 +183,16 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
           fit: BoxFit.scaleDown,
           child: ElevatedButton(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(
                   MyFlutterApp.drive,
                   size: hp(2.5),
                 ),
-                Container(
-                  width: wp(2),
-                  height: hp(4),
-                ),
+                // Container(
+                //   width: wp(2),
+                //   height: hp(4),
+                // ),
                 Text('View', style: TextStyle(fontSize: hp(2)))
               ],
             ),
