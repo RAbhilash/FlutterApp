@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:math';
 
 class detail {
   String subject, asset, url;
@@ -112,6 +113,8 @@ Widget item(
     BuildContext context, int index, String subject, String url, String asset) {
   final wp = Screen(context).wp; //specify wp
   final hp = Screen(context).hp;
+  var size = MediaQuery.of(context).size;
+  var diag = sqrt(size.height * size.height + size.width * size.width);
   return Padding(
     padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
     child: Container(
@@ -134,6 +137,7 @@ Widget item(
                       url,
                       wp,
                       hp,
+                      diag,
                     ),
                   ),
                 ),
@@ -158,7 +162,8 @@ Widget item(
   );
 }
 
-Widget tab(BuildContext context, String s, String url, var wp, var hp) {
+Widget tab(
+    BuildContext context, String s, String url, var wp, var hp, var diag) {
   return Column(
     //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,13 +171,13 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
       Padding(
         padding: EdgeInsets.all(8),
         child: Container(
-          height: hp(4),
+          height: hp(5),
           width: wp(60),
           child: TextOneLine(
             s,
             overflow: TextOverflow.fade,
             style: TextStyle(
-              fontSize: hp(2.2),
+              fontSize: diag * .025,
             ),
           ),
         ),
@@ -187,13 +192,13 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
               children: <Widget>[
                 Icon(
                   MyFlutterApp.drive,
-                  size: hp(2.5),
+                  size: diag * .02,
                 ),
-                // Container(
-                //   width: wp(2),
-                //   height: hp(4),
-                // ),
-                Text('View', style: TextStyle(fontSize: hp(2)))
+                Container(
+                  width: 7,
+                  height: hp(4),
+                ),
+                Text('View', style: TextStyle(fontSize: diag * .02))
               ],
             ),
             onPressed: () {

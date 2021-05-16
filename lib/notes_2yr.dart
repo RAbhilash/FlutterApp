@@ -210,7 +210,7 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
                   size: hp(2.5),
                 ),
                 Container(
-                  width: wp(2),
+                  width: 7,
                   height: hp(4),
                 ),
                 Text('View', style: TextStyle(fontSize: hp(2)))

@@ -6,6 +6,7 @@ import 'package:splashscreen/splashscreen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
+import 'dart:math';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,11 +36,14 @@ class MyApp extends StatelessWidget {
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return SplashScreen(
       seconds: 1,
       navigateAfterSeconds: HomeScreen(),
       image: Image.asset("assets/images/logo.png"),
-      photoSize: MediaQuery.of(context).size.width * .3,
+      photoSize: //(size.height + size.width) * .5,
+          sqrt(size.height * size.height + size.width * size.width) * 0.2,
+      //MediaQuery.of(context).size.width * .3,
       backgroundColor: Colors.red[300],
       loaderColor: Colors.white,
     );
