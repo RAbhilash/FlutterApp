@@ -15,3 +15,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+[SRM_MATE.pdf](https://github.com/RAbhilash/FlutterApp/files/7326931/SRM_MATE.pdf)
